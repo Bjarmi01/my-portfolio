@@ -26,7 +26,7 @@ export default function SectionIndicator() {
   }, [])
 
   return (
-    <div className="fixed bottom-8 right-8 flex flex-col space-y-2">
+    <div className="fixed bottom-[14%] right-8 flex flex-col space-y-2">
       {Array.from({ length: sections }, (_, i) => (
         <div
           key={i}
