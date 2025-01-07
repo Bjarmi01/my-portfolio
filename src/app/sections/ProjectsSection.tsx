@@ -2,7 +2,7 @@ import Button from "../components/Button";
 
 export default function ProjectsSection() {
   return (
-    <section className="snap-start h-screen flex flex-col items-center justify-center p-8 bg-[#F9F9F9]">
+    <section id="section4" className="snap-start h-screen flex flex-col items-center justify-center p-8 bg-[#F9F9F9]">
       <div className="flex flex-row container w-full bg-white border border-gray-200 rounded-lg shadow-lg">
         {/* First Section */}
         <div className="flex-1 flex flex-col items-start justify-center p-[7em] border-r border-[#4831d44d]">

@@ -1,33 +1,43 @@
-// context/ScrollContext.tsx
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const ScrollContext = createContext<number>(0);
-
-export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
-  const [scrollIndex, setScrollIndex] = useState(0);
+export const useControlledScroll = (sectionIds: string[]) => {
+  const [currentSection, setCurrentSection] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false); // Prevent multiple scroll actions at once
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section');
-      let index = 0;
+    const handleScroll = (event: WheelEvent) => {
+      event.preventDefault(); // Prevent default scroll behavior
 
-      sections.forEach((section, i) => {
-        const top = section.getBoundingClientRect().top;
-        if (top < window.innerHeight * 0.5) {
-          index = i;
+      if (isScrolling) return; // Skip if already scrolling
+
+      const direction = Math.sign(event.deltaY); // Positive for down, negative for up
+      const newSectionIndex = Math.max(
+        0,
+        Math.min(sectionIds.length - 1, currentSection + direction)
+      );
+
+      if (newSectionIndex !== currentSection) {
+        setIsScrolling(true); // Block further scrolls during the transition
+        setCurrentSection(newSectionIndex);
+
+        const targetSection = document.getElementById(sectionIds[newSectionIndex]);
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
         }
-      });
 
-      setScrollIndex(index);
+        // Allow scrolling again after the animation completes
+        setTimeout(() => setIsScrolling(false), 800); // Adjust timeout based on scroll animation duration
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('wheel', handleScroll, { passive: false });
+    return () => window.removeEventListener('wheel', handleScroll);
+  }, [currentSection, isScrolling, sectionIds]);
 
-  return <ScrollContext.Provider value={scrollIndex}>{children}</ScrollContext.Provider>;
+  return sectionIds[currentSection];
 };
-
-export const useScrollIndex = () => useContext(ScrollContext);

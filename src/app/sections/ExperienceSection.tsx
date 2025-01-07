@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function ExperienceSection() {
    return (
-     <section className="snap-start h-screen flex flex-row items-center justify-between px-40 mt-[5.5vh] bg-[#4831d4]">
+     <section id="section3" className="snap-start h-screen flex flex-row items-center justify-between px-40 mt-[5.5vh] bg-[#4831d4]">
       <div className='w-1/2'>
        <h1 className="text-[#ccf381] max-w-[27vw] leading-none text-[4em] font-bold">Over the years,</h1>
        <p className="text-white max-w-[27vw] leading-relaxed mt-4">I've built products for companies and businesses around the globe ranging from marketing websites to complex solutions and enterprise apps with focus on fast, elegant and accessible user experiences.</p>

@@ -2,7 +2,7 @@ import Button from '../components/Button'
 
 export default function ContactSection() {
    return (
-     <section className="snap-start h-screen flex flex-col items-center justify-center p-4">
+     <section id="section5" className="snap-start h-screen flex flex-col items-center justify-center p-4">
        <h1 className="text-[3.2em] text-[#4831d4] font-bold leading-none">Send me a message!</h1>
        <p className="text-[1.6em] text-gray-600 text-center leading-tight mt-4 mb-[3.3em] max-w-[701px]">Got question or a proposal, or just want <br/> to say hello? Go ahead.</p>
        <form className="w-full max-w-2xl space-y-6">

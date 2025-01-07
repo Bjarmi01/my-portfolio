@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function HeroSection() {
   return (
-    <section className="relative snap-start h-[90%] w-full custom-gradient md:bg-custom-gradient z-0">
+    <section id="section1" className="relative snap-start h-[90%] w-full custom-gradient md:bg-custom-gradient z-0">
       <div className="container mx-auto flex items-center h-full px-8">
         {/* Text Section */}
         <div className="w-2/5">
