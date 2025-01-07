@@ -6,9 +6,9 @@ export default function HeroSection() {
       <div className="container mx-auto flex items-center h-full px-8">
         {/* Text Section */}
         <div className="w-2/5">
-          <h1 className="text-[4.4em] font-bold text-[#ccf381] mb-4 leading-none">Welcome to My Portfolio</h1>
+          <h1 className="text-[4.4em] font-bold text-[#ccf381] mb-4 leading-none">Hi, I'm Bjarmi</h1>
           <p className="text-lg text-white">
-            A quick glimpse into who I am, what I do, and what I’ve built.
+          A passionate software developer crafting thoughtful, high-quality solutions. Let's create something remarkable together.
           </p>
         </div>
 

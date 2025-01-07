@@ -1,43 +1,73 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useSectionContext } from '../context/SectionContext';
 
 export const useControlledScroll = (sectionIds: string[]) => {
-  const [currentSection, setCurrentSection] = useState(0);
-  const [isScrolling, setIsScrolling] = useState(false); // Prevent multiple scroll actions at once
+  const { currentSection, setCurrentSection } = useSectionContext();
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  const scrollToSection = (index: number) => {
+    const targetSection = document.getElementById(sectionIds[index]);
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+      setCurrentSection(index);
+    }
+  };
 
   useEffect(() => {
-    const handleScroll = (event: WheelEvent) => {
-      event.preventDefault(); // Prevent default scroll behavior
+    const handleWheel = (event: WheelEvent) => {
+      event.preventDefault();
 
-      if (isScrolling) return; // Skip if already scrolling
+      if (isScrolling) return;
+      
+      const deltaYNormalized = Math.sign(event.deltaY) * Math.min(Math.abs(event.deltaY), 70);
 
-      const direction = Math.sign(event.deltaY); // Positive for down, negative for up
+      const direction = Math.sign(deltaYNormalized);
       const newSectionIndex = Math.max(
         0,
         Math.min(sectionIds.length - 1, currentSection + direction)
       );
 
       if (newSectionIndex !== currentSection) {
-        setIsScrolling(true); // Block further scrolls during the transition
-        setCurrentSection(newSectionIndex);
-
-        const targetSection = document.getElementById(sectionIds[newSectionIndex]);
-        if (targetSection) {
-          targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
-        }
-
-        // Allow scrolling again after the animation completes
-        setTimeout(() => setIsScrolling(false), 800); // Adjust timeout based on scroll animation duration
+        setIsScrolling(true);
+        scrollToSection(newSectionIndex);
+        setTimeout(() => setIsScrolling(false), 800);
       }
     };
 
-    window.addEventListener('wheel', handleScroll, { passive: false });
-    return () => window.removeEventListener('wheel', handleScroll);
-  }, [currentSection, isScrolling, sectionIds]);
+    const handleKeydown = (event: KeyboardEvent) => {
+      if (isScrolling) return;
+
+      const { key } = event;
+      const isSpacebar = key === ' ' || key === 'Spacebar';
+      const isArrowDown = key === 'ArrowDown';
+      const isArrowUp = key === 'ArrowUp';
+
+      if (isSpacebar || isArrowDown) {
+        event.preventDefault();
+        const nextSection = Math.min(currentSection + 1, sectionIds.length - 1);
+        scrollToSection(nextSection);
+      }
+
+      if (isArrowUp) {
+        event.preventDefault();
+        const prevSection = Math.max(currentSection - 1, 0);
+        scrollToSection(prevSection);
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('keydown', handleKeydown);
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('keydown', handleKeydown);
+    };
+  }, [currentSection, sectionIds, isScrolling]);
 
   return sectionIds[currentSection];
 };

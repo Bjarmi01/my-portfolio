@@ -5,10 +5,12 @@ export default function AboutSection() {
       <div className="flex flex-col md:flex-row justify-between items-center w-full">
         {/* Left Side */}
         <div className="text-left mb-8 md:mb-0">
-          <h1 className="text-[3em] md:text-[4em] text-[#4831d4] font-bold">Design</h1>
+          <h1 className="text-[3em] md:text-[4em] text-[#4831d4] font-bold">About Me</h1>
           <p className="max-w-md text-lg leading-relaxed text-gray-600">
-            I'm a passionate developer with a love for building engaging, high-quality web experiences.
-            With experience in React, TypeScript, and more, I strive to write clean, maintainable code and solve real-world problems.
+            I specialize in full-stack development, cross-platform apps, and
+            serverless architectures. With experience in React, TypeScript, and
+            more, I strive to write clean, maintainable code while solving
+            real-world problems.
           </p>
         </div>
         <div className="hidden md:block mr-32">
@@ -25,8 +27,10 @@ export default function AboutSection() {
         <div className="text-left md:ml-12">
         <h1 className="text-[3em] md:text-[4em] text-[#4831d4] font-bold">Engineering</h1>
         <p className="max-w-md text-lg leading-relaxed text-gray-600">
-        I'm a passionate developer with a love for building engaging, high-quality web experiences.
-            With experience in React, TypeScript, and more, I strive to write clean, maintainable code and solve real-world problems.
+            I’m driven by a love for building engaging, high-quality web
+            experiences. Whether it's crafting scalable apps or designing
+            user-centric interfaces, I focus on solving challenges with
+            efficiency and creativity.
           </p>
         </div>
       </div>
