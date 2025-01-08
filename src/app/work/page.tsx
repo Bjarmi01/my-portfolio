@@ -1,5 +1,6 @@
 import { projects } from '../data/projectsData';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function WorkPage() {
   return (
@@ -32,10 +33,15 @@ export default function WorkPage() {
               className="block"
             >
               <figure className="h-[10em] flex items-center justify-center bg-[#f7f6fa]">
-                <span
-                  className="text-gray-500"
-                  dangerouslySetInnerHTML={{ __html: project.logo || project.name }}
-                />
+                {project.logo && (
+                    <Image
+                      src={project.logo}
+                      alt={`${project.name} logo`}
+                      width={140}
+                      height={140}
+                      className="object-contain"
+                    />
+                  )}
               </figure>
               <div className="p-[2em]">
                 <h5 className="text-xl font-semibold text-[#474747] ">{project.name}</h5>

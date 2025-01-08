@@ -1,21 +1,36 @@
+import { articles } from "../data/articlesData";
+
 export default function ArticlesPage() {
    return (
-     <main className="min-h-screen flex flex-col items-center justify-center bg-[#F9F9F9] p-8">
-       <h1 className="text-[3em] text-[#4831d4] font-bold">My Articles</h1>
-       <p className="text-gray-600 text-lg mt-4">
-         Insights on web development, design, and my personal journey.
-       </p>
-       <div className="mt-8 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-         <div className="bg-white border border-gray-200 shadow-lg rounded-lg p-6">
-           <h2 className="text-[#4831d4] font-bold text-lg">Article 1</h2>
-           <p className="text-gray-600 text-sm mt-2">A brief description of the article.</p>
-         </div>
-         <div className="bg-white border border-gray-200 shadow-lg rounded-lg p-6">
-           <h2 className="text-[#4831d4] font-bold text-lg">Article 2</h2>
-           <p className="text-gray-600 text-sm mt-2">A brief description of the article.</p>
-         </div>
-       </div>
-     </main>
-   );
- }
- 
+    <main className="h-auto flex flex-col items-center bg-[#f5f4fc] py-[10.2em] px-[3.5em]">
+    <header className="relative text-center mt-12 mb-[3.5em]">
+      <h1 className="text-4xl font-bold text-[#474747] mt-[0.67em]">
+        <span className="opacity-70">/</span>
+        articles
+        <span className="opacity-70">.</span>
+        </h1>
+    </header>
+    <section className="w-full max-w-4xl space-y-8">
+        {articles.map((article) => (
+          <div
+            key={article.id}
+            className="border-b border-gray-300 pb-6 mb-6 last:border-b-0"
+          >
+            <p className="text-sm text-gray-500 mb-2">{article.date}</p>
+            <h2 className="text-2xl font-bold text-[#474747]">
+              <a
+                href={article.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {article.title}
+              </a>
+            </h2>
+            <p className="text-gray-600 mt-2">{article.description}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  );
+}

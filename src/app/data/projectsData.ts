@@ -1,28 +1,29 @@
-// src/data/projectsData.ts
 export const projects = [
    {
      id: 1,
-     name: 'Project 1',
+     name: 'Atlas Active',
      siteName: 'project1.com',
-     internalPage: false,
-     logo: '<svg>...</svg>', // Replace with actual logo SVG or image URL
+     internalPage: true,
+     logo: '/images/logos/atlas-active-logo.png',
    },
    {
      id: 2,
-     name: 'Project 2',
+     name: 'Beanfee Direct',
      siteName: 'project2.com',
      internalPage: true,
+     logo: '/images/logos/bf-logo.png',
    },
    {
      id: 3,
-     name: 'Project 3',
+     name: 'Showdeck Chat',
      siteName: 'project3.com',
-     internalPage: false,
+     internalPage: true,
+     logo: '/images/logos/showdeck-logo.png',
    },
    {
      id: 4,
-     name: 'Project 4',
-     siteName: 'project4.com',
+     name: 'Bjarmi.dev',
+     siteName: 'bjarmi.dev',
      internalPage: false,
    },
  ];
