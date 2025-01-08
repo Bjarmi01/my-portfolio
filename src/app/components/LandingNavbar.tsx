@@ -1,22 +1,23 @@
 'use client'
 
 import { useState } from 'react';
-import { useControlledScroll } from '../context/ScrollContext';
 import { Lilita_One } from 'next/font/google';
+import Link from 'next/link';
+import { useControlledScroll } from '../context/ScrollContext';
 
 const lilita_one = Lilita_One({
   subsets: ['latin'],
   weight: '400', // Adjust weights as needed
 });
 
-export default function Navbar() {
+export default function LandingNavbar() {
   const visibleSection = useControlledScroll(['section1', 'section2', 'section3', 'section4', 'section5']);
   const isFirstPage = visibleSection === 'section1';
   const isThirdPage = visibleSection === 'section3';
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between pl-[6em] pr-[6em] h-[11.12em] bg-transparent w-full text-lg fixed z-50">
+    <nav className="flex items-center justify-between pl-[6em] p-[6em] h-[11.12em] bg-transparent w-full text-lg fixed z-50 transition-transform duration-300">
       <div
         className={`${lilita_one.className} text-[2.5em] font-bold transition-all duration-300 ${
           isFirstPage ? 'text-[#ccf381]' : isThirdPage ? 'text-[#ccf381] text-[1.8em]' : 'text-[#4831d4] text-[1.8em]'
@@ -46,31 +47,31 @@ export default function Navbar() {
   <div className="absolute w-[22em] top-[1.4em] right-[3.41em] bg-white text-base shadow-md p-[3.5em] my-[1.2em]">
     <ul className="space-y-6 mt-8 relative">
       <li className="relative">
-        <a
-          href="#work"
+        <Link
+          href="/work"
           className="text-xl text-[#4831d4] relative group"
         >
           My Work
           <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-        </a>
+        </Link>
       </li>
       <li className="relative">
-        <a
-          href="#shelf"
+        <Link
+          href="/articles"
           className="text-xl text-[#4831d4] relative group"
         >
-          My Shelf
+          My Articles
           <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-        </a>
+        </Link>
       </li>
       <li className="relative">
-        <a
-          href="#resume"
+        <Link
+          href="/resume"
           className="text-xl text-[#4831d4] relative group"
         >
           My Résumé
           <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-        </a>
+        </Link>
       </li>
     </ul>
 
@@ -81,28 +82,24 @@ export default function Navbar() {
           bjarmi2001@gmail.com
           <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
         </a>
-        <a href="https://t.me/example" className="text-xl text-[#4831d4] relative group">
-          t.me/example
-          <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-        </a>
       </p>
     </div>
 
     <div className="mt-12 flex space-x-4">
-      <a href="#twitter" className="text-md text-[#4831d4] relative group">
+      <a href="https://x.com/BjarmiUr" target="_blank" className="text-md text-[#4831d4] relative group">
         TW
         <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
       </a>
-      <a href="#github" className="text-md text-[#4831d4] relative group">
+      <a href="https://github.com/Bjarmi01" target="_blank" className="text-md text-[#4831d4] relative group">
         GH
         <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
       </a>
-      <a href="#linkedin" className="text-md text-[#4831d4] relative group">
+      <a href="https://www.linkedin.com/in/sigur%C3%B0ur-bjarmi-halld%C3%B3rsson-7a14a82a3/" target="_blank" className="text-md text-[#4831d4] relative group">
         LN
         <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
       </a>
-      <a href="#youtube" className="text-md text-[#4831d4] relative group">
-        YT
+      <a href="https://www.instagram.com/sigurdur.bjarmi/" target="_blank" className="text-md text-[#4831d4] relative group">
+        IN
         <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
       </a>
     </div>
