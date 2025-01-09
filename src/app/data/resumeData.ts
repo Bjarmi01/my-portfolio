@@ -1,8 +1,6 @@
 export const resumeData = {
    name: "Sigurður Bjarmi Halldórsson",
-   location: "Reykjavík, Iceland",
    contact: {
-     phone: "+354 6989274",
      email: "bjarmi2001@gmail.com",
      linkedIn: "LinkedIn Profile",
    },
@@ -10,7 +8,7 @@ export const resumeData = {
      {
        degree: "B.Sc. in Computer Science",
        institution: "Reykjavik University",
-       period: "2021–2024",
+       period: "2021–2025",
        details: [
          "Relevant Coursework: Software Development, Data Structures & Algorithms, Database Systems",
          "Final Project: Developed a full-stack solution for a startup (Showdeck) using Vue.js, FastAPI, Django, and Docker.",
@@ -23,10 +21,10 @@ export const resumeData = {
      },
    ],
    technicalSkills: {
-     languages: ["TypeScript", "JavaScript", "Dart", "Python", "C++", "C#", "SQL"],
-     frameworks: ["Flutter", "React", "Vue.js", ".NET", "FastAPI", "Django"],
-     tools: ["Git", "Docker", "Firebase", "REST APIs", "Serverless Architecture"],
-     other: ["Agile methodologies", "code reviews", "cross-platform mobile/web development"],
+     Languages: ["TypeScript", "JavaScript", "Dart", "Python", "C++", "C#", "SQL"],
+     Frameworks: ["Flutter", "React", "Vue.js", ".NET", "FastAPI", "Django"],
+     Tools: ["Git", "Docker", "Firebase", "REST APIs", "Serverless Architecture"],
+     Other: ["Agile methodologies", "code reviews", "cross-platform mobile/web development"],
    },
    experience: [
      {
@@ -36,7 +34,7 @@ export const resumeData = {
        points: [
          "Built mobile and web applications with TypeScript, Flutter, and Firebase.",
          "Employed Git-based workflows and performed code reviews.",
-         "Implemented state management solutions (Provider) and deployed via Cloudflare.",
+         "Implemented state management solutions Provider.",
          "Collaborated closely with a team, emphasizing clean, maintainable code.",
        ],
      },
