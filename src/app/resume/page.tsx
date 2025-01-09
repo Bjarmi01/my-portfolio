@@ -1,12 +1,66 @@
+'use client'
+
+import Image from 'next/image';
+import Link from 'next/link';
+import jsPDF from 'jspdf';
 import { resumeData } from "../data/resumeData";
 
 export default function ResumePage() {
-  const {education, technicalSkills, experience, projects, additionalInfo, references } =
-    resumeData;
+  const {education, technicalSkills, experience, references } = resumeData;
+
+  const downloadPDF = () => {
+    const element = document.querySelector('#resume-content');
+    if (!element) {
+      console.error('Resume content not found!');
+      return;
+    }
+  
+    const doc = new jsPDF('p', 'pt', 'a4');
+    doc.html(element as HTMLElement, {
+      callback: function (doc) {
+        doc.save('resume.pdf');
+      },
+      x: 0,
+      y: 0,
+      html2canvas: {
+        scale: 0.6, // Scale the content to fit within A4 dimensions
+      },
+    });
+  };  
 
   return (
     <main className="bg-white">
-      <div className="flex flex-row bg-[#f5f4fc] my-[15em] mx-[10em] py-[6.7em] px-[3.5em]">
+      <div className="relative flex flex-row bg-[#f5f4fc] xl:my-[15em] xl:mx-[10em] py-[13em] xl:py-[6.7em] px-[3.5em] rounded-lg" id="resume-content">
+        <div className="absolute right-[2em] top-[2em] flex items-center space-x-4">
+          <Link 
+            href="https://www.linkedin.com/in/sigur%C3%B0ur-bjarmi-halld%C3%B3rsson-7a14a82a3/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit LinkedIn Profile"
+            className="cursor-pointer"  
+          >
+            <Image
+              src="/images/linkedin-icon.svg"
+              alt="LinkedIn Icon"
+              width={20}
+              height={20}
+              className="object-cover"
+            />
+          </Link>
+          <button
+            onClick={downloadPDF}
+            className="flex items-center space-x-2 text-[#4831d4] font-semibold cursor-pointer"
+          >
+            <Image
+              src="/images/download-icon.svg"
+              alt="Download Icon"
+              width={20}
+              height={20}
+              className="object-cover"
+            />
+            <span>Download</span>
+          </button>
+        </div>
         <section className="flex flex-col mr-24">
           <div className="flex items-baseline">
             <a
@@ -47,9 +101,12 @@ export default function ResumePage() {
         <div>
           <header className="text-left mb-16">
             <h1 className="text-6xl leading-none font-bold text-[#4831d4] mb-[0.5em]">Sigurður Bjarmi<br />Halldórsson</h1>
-            <h2 className="text-gray-600 text-[1.6em] m-0">Expert Frontend developer and UX Engineer.</h2>
+            <h2 className="text-gray-600 text-[1.6em] m-0 max-w-[70%]">Frontend Developer with Expertise in Modern Technologies and Distributed Systems.</h2>
             <p className="text-gray-600 max-w-[70%] text-[1.2em] mt-[2em]">
-              Engineer valued for driving high-performance accessible web experiences. I design quality, user-friendly and scalable products regardless of stack.
+            Experienced in full-stack and cross-platform development, I specialize in 
+    creating scalable, efficient, and user-friendly solutions. With a strong foundation 
+    in Flutter, Vue.js, and TypeScript, I thrive on solving complex problems, 
+    collaborating with teams, and building impactful software solutions.
             </p>
             <hr className="border-t border-gray-300 mt-12 w-[110%] -ml-[8%]" />
           </header>
@@ -103,11 +160,34 @@ export default function ResumePage() {
             ))}
           </section>
 
+            <section className="mb-12">
+            <h2 className="relative inline-block text-[1.424em] font-bold text-[#4831d4] z-0 after:content-[''] after:bg-[#ccf381] after:h-[0.6em] after:w-[109%] after:block after:absolute after:-mt-4 after:-ml-[4%] after:-z-10">
+              References
+            </h2>
+            <ul className="list-none mt-4">
+              {references.map((reference, idx) => (
+                <li key={idx} className="relative mb-4 pl-4 text-[#474747bf] before:content-[''] before:w-[0.5em] before:h-[0.5em] before:bg-current before:inline-block before:absolute before:left-0 before:top-[0.5em]">
+                  <h3 className="font-bold text-[#4831d4]">
+                    {reference.name}
+                  </h3>
+                  <p className="text-gray-600">
+                    {reference.title} | {reference.phone} |{" "}
+                    <a
+                      href={`mailto:${reference.email}`}
+                      className="text-[#4831d4] underline"
+                    >
+                      {reference.email}
+                    </a>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
           <section className="mb-12">
             <h2 className="relative inline-block text-[1.424em] font-bold text-[#4831d4] z-0 after:content-[''] after:bg-[#ccf381] after:h-[0.6em] after:w-[109%] after:block after:absolute after:-mt-4 after:-ml-[4%] after:-z-10">
               Projects
             </h2>
-            <p className="text-gray-600 max-w-[70%] text-[1.2em] mt-[2em]">
+            <p className="text-gray-600 max-w-[70%] text-[1.2em]">
               Link to some of my work can be found here  
               <a
                 href="https://bjarmi.dev/work"
