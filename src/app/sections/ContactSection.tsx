@@ -65,21 +65,21 @@ export default function ContactSection() {
       className="snap-start h-screen flex flex-col items-center justify-center p-4 overflow-hidden"
     >
       <h1
-        className={`text-[3.2em] text-[#4831d4] font-bold leading-none transform transition-all duration-1000 ease-in-out ${
+        className={`text-[2.2em] md:text-[3.2em] text-[#4831d4] font-bold leading-none transform transition-all duration-1000 ease-in-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
         Send me a message!
       </h1>
       <p
-        className={`text-[1.6em] text-gray-600 text-center leading-tight mt-4 mb-[3.3em] max-w-[701px] transform transition-all duration-1000 ease-in-out delay-300 ${
+        className={`text-[1.2em] md:text-[1.6em] text-gray-600 text-center leading-tight mt-4 mb-[3.3em] max-w-[701px] transform transition-all duration-1000 ease-in-out delay-300 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
         Have a question, proposal, or just want <br /> to say hello? Let's connect!
       </p>
       <form className="w-full max-w-2xl space-y-6" onSubmit={handleSubmit}>
-        <div className="flex flex-row space-x-14">
+        <div className="flex flex-col md:flex-row md:space-x-14">
           {/* Name Input */}
           <div className="flex-1 relative border-b border-gray-300 focus-within:border-[#4831d4] transition-all duration-300">
             <label
@@ -100,7 +100,7 @@ export default function ContactSection() {
           </div>
 
           {/* Email Input */}
-          <div className="flex-1 relative border-b border-gray-300 focus-within:border-[#4831d4] transition-all duration-300">
+          <div className="flex-1 relative mt-6 md:mt-0 border-b border-gray-300 focus-within:border-[#4831d4] transition-all duration-300">
             <label
               htmlFor="email"
               className="absolute left-0 top-0 text-gray-500 text-sm transition-all duration-300 pointer-events-none peer-focus:text-[#4831d4]"

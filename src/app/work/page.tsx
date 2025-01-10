@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function WorkPage() {
   return (
-    <main className="h-auto flex flex-col items-center bg-[#f5f4fc] py-[10.2em] px-[3.5em]">
+    <main className="h-auto flex flex-col items-center bg-[#f5f4fc] pb-[10.2em] px-[3.5em]">
       <header className="relative text-center mt-12 mb-[3.5em]">
         <h1 className="text-4xl font-bold text-[#474747] mt-[0.67em]">
           <span className="opacity-70">/</span>

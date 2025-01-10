@@ -1,22 +1,27 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Lilita_One } from 'next/font/google';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { useControlledScroll } from '../context/ScrollContext';
 
 const lilita_one = Lilita_One({
   subsets: ['latin'],
-  weight: '400', // Adjust weights as needed
+  weight: '400',
 });
 
 export default function DefaultNavbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
-    <nav className="absolute flex items-center justify-between pl-[6em] p-[6em] h-[11.12em] bg-transparent w-full text-lg z-50 transition-transform duration-300">
+    <nav className="flex items-center justify-between px-[3em] md:p-[6em] h-[7em] md:h-[11.12em] bg-[#f5f4fc] w-full text-lg z-50 transition-transform duration-300">
       <div
-        className={`${lilita_one.className} text-[#4831d4] text-[2.5em] font-bold transition-all duration-300`}
+        className={`${lilita_one.className} text-[#4831d4] text-3xl md:text-[2.5em] font-bold transition-all duration-300`}
       >
         <a href="/">Bjarmi</a>
       </div>
@@ -27,79 +32,97 @@ export default function DefaultNavbar() {
       >
         {/* Top line */}
         <span
-          className={`block h-[2px] w-full bg-[#4831d4] z-10 transform transition-transform duration-300 ease-in-out 
+          className={`block h-[2px] w-full bg-[#4831d4] z-50 transform transition-transform duration-300 ease-in-out 
           ${isOpen ? 'rotate-45 translate-y-[16px]' : ''}`}
         ></span>
 
         {/* Bottom line */}
         <span
-          className={`block h-[2px] w-2/3 bg-[#4831d4] z-2 transform transition-transform duration-300 ease-in-out 
-          ${isOpen ? '-rotate-45 w-full z-10' : ''}`}
+          className={`block h-[2px] w-2/3 bg-[#4831d4] z-50 transform transition-transform duration-300 ease-in-out 
+          ${isOpen ? '-rotate-45 w-full z-50' : ''}`}
         ></span>
       </button>
 
-      {isOpen && (
-  <div className="absolute w-[22em] top-[1.4em] right-[3.41em] bg-white text-base shadow-md p-[3.5em] my-[1.2em]">
-    <ul className="space-y-6 mt-8 relative">
-      <li className="relative">
-        <Link
-          href="/work"
-          className="text-xl text-[#4831d4] relative group"
+      {/* Drawer */}
+      <div
+        className={`flex flex-col z-10 justify-around fixed md:justify-normal md:absolute w-full left-0 top-0 bottom-0 right-0 md:w-[22em] md:top-[1.4em] md:right-[3.41em] md:left-auto md:bottom-auto bg-white text-base shadow-md p-[3.5em] md:my-[1.2em] transform transition-transform duration-500 ease-in-out ${
+          isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+        }`}
+      >
+      <ul
+          className={`space-y-10 md:space-y-6 mt-8 relative opacity-0 transform translate-x-10 transition-all duration-500 ease-in-out ${
+            isOpen ? 'opacity-100 translate-x-0' : ''
+          }`}
+          style={{ transitionDelay: '0ms' }} // First item animates immediately
         >
-          My Work
-          <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-        </Link>
-      </li>
-      <li className="relative">
-        <Link
-          href="/articles"
-          className="text-xl text-[#4831d4] relative group"
-        >
-          My Articles
-          <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-        </Link>
-      </li>
-      <li className="relative">
-        <Link
-          href="/resume"
-          className="text-xl text-[#4831d4] relative group"
-        >
-          My Résumé
-          <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-        </Link>
-      </li>
-    </ul>
+          <li className="relative">
+            <Link
+              href="/work"
+              className="text-[1.5em] md:text-xl text-[#4831d4] relative group"
+            >
+              My Work
+              <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
+            </Link>
+          </li>
+          <li className="relative">
+            <Link
+              href="/articles"
+              className="text-[1.5em] md:text-xl text-[#4831d4] relative group"
+            >
+              My Articles
+              <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
+            </Link>
+          </li>
+          <li className="relative">
+            <Link
+              href="/resume"
+              className="text-[1.5em] md:text-xl text-[#4831d4] relative group"
+            >
+              My Résumé
+              <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
+            </Link>
+          </li>
+        </ul>
 
-    <div className="mt-12">
-      <h3 className="text-sm text-gray-500 uppercase mb-4">Say Hello</h3>
-      <p className="text-[#4831d4]">
-        <a href="mailto:bjarmi2001@gmail.com" className="text-xl text-[#4831d4] relative group">
-          bjarmi2001@gmail.com
-          <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-        </a>
-      </p>
-    </div>
+        <div
+          className={`space-y-10 md:space-y-3 mt-12 opacity-0 transform translate-x-10 transition-all duration-500 ease-in-out ${
+            isOpen ? 'opacity-100 translate-x-0' : ''
+          }`}
+          style={{ transitionDelay: '200ms' }} // Animates after 200ms
+        >
+          <h3 className="text-[1.5em] md:text-sm text-gray-500 uppercase mb-4">Say Hello</h3>
+          <p className="text-[#4831d4]">
+            <a href="mailto:bjarmi2001@gmail.com" className="text-[1.5em] md:text-xl text-[#4831d4] relative group">
+              bjarmi2001@gmail.com
+              <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
+            </a>
+          </p>
+        </div>
 
-    <div className="mt-12 flex space-x-4">
-      <a href="https://x.com/BjarmiUr" target="_blank" className="text-md text-[#4831d4] relative group">
-        TW
-        <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-      </a>
-      <a href="https://github.com/Bjarmi01" target="_blank" className="text-md text-[#4831d4] relative group">
-        GH
-        <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-      </a>
-      <a href="https://www.linkedin.com/in/sigur%C3%B0ur-bjarmi-halld%C3%B3rsson-7a14a82a3/" target="_blank" className="text-md text-[#4831d4] relative group">
-        LN
-        <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-      </a>
-      <a href="https://www.instagram.com/sigurdur.bjarmi/" target="_blank" className="text-md text-[#4831d4] relative group">
-        IN
-        <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-      </a>
-    </div>
-  </div>
-)}
+        <div
+          className={`mt-12 flex space-x-12 md:space-x-4 opacity-0 transform translate-x-10 transition-all duration-500 ease-in-out ${
+            isOpen ? 'opacity-100 translate-x-0' : ''
+          }`}
+          style={{ transitionDelay: '400ms' }} // Animates after 400ms
+        >
+          <a href="https://x.com/BjarmiUr" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
+            TW
+            <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
+          </a>
+          <a href="https://github.com/Bjarmi01" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
+            GH
+            <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
+          </a>
+          <a href="https://www.linkedin.com/in/sigur%C3%B0ur-bjarmi-halld%C3%B3rsson-7a14a82a3/" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
+            LN
+            <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
+          </a>
+          <a href="https://www.instagram.com/sigurdur.bjarmi/" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
+            IN
+            <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
+          </a>
+        </div>
+      </div>
     </nav>
   )
 }
