@@ -5,8 +5,10 @@ export default function HeroSection() {
     <section id="section1" className="relative snap-start h-[90%] w-full custom-mobile-gradient md:custom-gradient z-0 overflow-hidden">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:px-16 h-full px-8">
         {/* Text Section */}
-        <div className="w-full md:w-2/5 text-left mt-[14em] px-[15vw] md:p-0">
-          <h1 className="text-[4.4em] font-bold text-[#ccf381] mb-4 leading-none">Hi, I'm<br />Bjarmi</h1>
+        <div className="w-full md:w-2/5 text-left mt-[14em] md:mt-0 px-[15vw] md:p-0">
+          <h1 className="text-[4.4em] font-bold text-[#ccf381] mb-4 leading-none">
+            Hi, I'm<br />Bjarmi
+          </h1>
           <p className="text-lg text-white max-w-[20em] md:max-w-fit">
           A passionate software developer crafting thoughtful, high-quality solutions. Let's create something remarkable together.
           </p>
@@ -17,11 +19,11 @@ export default function HeroSection() {
           <div className="relative z-10">
             <div className="w-52 h-52 md:w-72 md:h-72 border border-white">
               <Image
-                src="/images/placeholder_avatar.png"
+                src="/images/jakkaföt.jpg"
                 alt="My Photo"
                 width={288}
                 height={288}
-                className="object-cover mt-[-12px] ml-[-12px]"
+                className="object-contain mt-[-12px] ml-[-12px]"
                 />
             </div>
           </div>
