@@ -1,12 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '../components/Button';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    const section = document.querySelector('#section5');
+    if (section) observer.observe(section);
+
+    return () => {
+      if (section) observer.unobserve(section);
+    };
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -41,9 +60,22 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="section5" className="snap-start h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="text-[3.2em] text-[#4831d4] font-bold leading-none">Send me a message!</h1>
-      <p className="text-[1.6em] text-gray-600 text-center leading-tight mt-4 mb-[3.3em] max-w-[701px]">
+    <section 
+      id="section5" 
+      className="snap-start h-screen flex flex-col items-center justify-center p-4"
+    >
+      <h1
+        className={`text-[3.2em] text-[#4831d4] font-bold leading-none transform transition-all duration-1000 ease-in-out ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
+        Send me a message!
+      </h1>
+      <p
+        className={`text-[1.6em] text-gray-600 text-center leading-tight mt-4 mb-[3.3em] max-w-[701px] transform transition-all duration-1000 ease-in-out delay-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         Have a question, proposal, or just want <br /> to say hello? Let's connect!
       </p>
       <form className="w-full max-w-2xl space-y-6" onSubmit={handleSubmit}>

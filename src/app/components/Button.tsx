@@ -20,7 +20,7 @@ export default function Button({
       <a
         href={href}
         onClick={onClick}
-        className={`relative inline-flex items-center justify-between px-[3em] py-[1.25em] border border-[#4831d4] text-[#4831d4] font-bold uppercase tracking-wide transition-all duration-300 overflow-hidden group ${className}`}
+        className={`relative inline-flex items-center justify-between px-[4.6em] py-[1.6em] border border-[#4831d4] text-[#4831d4] font-bold uppercase tracking-wide transition-all duration-300 overflow-hidden group ${className}`}
       >
         <span className="absolute inset-0 w-0 bg-[#4831d4] transition-all duration-300 group-hover:w-full"></span>
         <span className="relative group-hover:text-white">{children}</span>

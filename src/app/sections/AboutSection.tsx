@@ -1,12 +1,49 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
 export default function AboutSection() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    const section = document.querySelector('#section2');
+    if (section) observer.observe(section);
+
+    return () => {
+      if (section) observer.unobserve(section);
+    };
+  }, []);
+
    return (
-     <section id="section2" className="relative snap-start h-screen flex flex-col items-center justify-center px-16 md:px-40">
+      <section 
+        id="section2" 
+        className="relative snap-start h-screen flex flex-col items-center justify-center px-16 md:px-40"
+      >
       {/* First Row */}
       <div className="flex flex-col md:flex-row justify-between items-center w-full">
         {/* Left Side */}
         <div className="text-left mb-8 md:mb-0">
-          <h1 className="text-[3em] md:text-[4em] text-[#4831d4] font-bold">About Me</h1>
-          <p className="max-w-md text-lg leading-relaxed text-gray-600">
+        <h1
+            className={`text-[3em] md:text-[4em] text-[#4831d4] font-bold transform transition-all duration-700 ease-in-out delay-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            About Me
+          </h1>
+          <p
+            className={`max-w-md text-lg leading-relaxed text-gray-600 transform transition-all duration-700 ease-in-out delay-500 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
             I specialize in full-stack development, cross-platform apps, and
             serverless architectures. With experience in React, TypeScript, and
             more, I strive to write clean, maintainable code while solving
@@ -25,8 +62,18 @@ export default function AboutSection() {
         </div>
         {/* Right Side */}
         <div className="text-left md:ml-12">
-        <h1 className="text-[3em] md:text-[4em] text-[#4831d4] font-bold">Engineering</h1>
-        <p className="max-w-md text-lg leading-relaxed text-gray-600">
+        <h1
+            className={`text-[3em] md:text-[4em] text-[#4831d4] font-bold transform transition-all duration-700 ease-in-out delay-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            Engineering
+          </h1>
+          <p
+            className={`max-w-md text-lg leading-relaxed text-gray-600 transform transition-all duration-700 ease-in-out delay-500 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
             I’m driven by a love for building engaging, high-quality web
             experiences. Whether it's crafting scalable apps or designing
             user-centric interfaces, I focus on solving challenges with
