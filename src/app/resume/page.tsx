@@ -20,10 +20,10 @@ export default function ResumePage() {
       callback: function (doc) {
         doc.save('resume.pdf');
       },
-      x: 0,
-      y: 0,
+      x: 10,
+      y: 10,
       html2canvas: {
-        scale: 0.6, // Scale the content to fit within A4 dimensions
+        scale: 0.5, // Scale the content to fit within A4 dimensions
       },
     });
   };  

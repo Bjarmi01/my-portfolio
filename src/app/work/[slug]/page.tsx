@@ -1,27 +1,33 @@
 import { projects } from "@/app/data/projectsData";
-import { notFound } from 'next/navigation';
+import { notFound } from "next/navigation";
 
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
+// Define the shape of `params` explicitly
+interface ProjectDetailPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
+  // Find the project based on the slug from params
   const project = projects.find(
     (p) => p.name.toLowerCase().replace(/\s+/g, '-') === params.slug
   );
 
   if (!project) {
-    notFound();
+    notFound(); // Trigger 404 page if the project isn't found
   }
 
   return (
-    <main className="min-h-screen flex flex-col items-center bg-gray-50 p-8">
-      <h1 className="text-4xl font-bold text-[#4831d4]">{project.name}</h1>
-      <p className="text-lg text-gray-600 mt-4">
-        Detailed information about {project.name}.
-      </p>
-      <figure className="mt-8">
-        <span
-          className="text-gray-500"
-          dangerouslySetInnerHTML={{ __html: project.logo || project.name }}
-        />
-      </figure>
+    <main className="min-h-screen flex flex-col items-center bg-[#f5f4fc]">
+      <h1 className="text-4xl font-bold text-[#4831d4]">COMING SOON</h1>
     </main>
   );
+}
+
+// Add the generateStaticParams function here
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.name.toLowerCase().replace(/\s+/g, '-'),
+  }));
 }

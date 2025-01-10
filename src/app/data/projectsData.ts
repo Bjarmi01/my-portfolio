@@ -2,21 +2,19 @@ export const projects = [
    {
      id: 1,
      name: 'Atlas Active',
-     siteName: 'project1.com',
      internalPage: true,
      logo: '/images/logos/atlas-active-logo.png',
    },
    {
      id: 2,
      name: 'Beanfee Direct',
-     siteName: 'project2.com',
-     internalPage: true,
+     siteName: 'apps.apple.com/is/app/beanfee-direct-is/id6648791011',
+     internalPage: false,
      logo: '/images/logos/bf-logo.png',
    },
    {
      id: 3,
      name: 'Showdeck Chat',
-     siteName: 'project3.com',
      internalPage: true,
      logo: '/images/logos/showdeck-logo.png',
    },
@@ -25,6 +23,7 @@ export const projects = [
      name: 'Bjarmi.dev',
      siteName: 'bjarmi.dev',
      internalPage: false,
+     logo: '/images/logos/bjarmi-dev-logo.png',
    },
  ];
  
