@@ -1,4 +1,3 @@
-import Navbar from './components/LandingNavbar'
 import SectionIndicator from './components/SectionIndicator'
 import HeroSection from './sections/HeroSection'
 import AboutSection from './sections/AboutSection'

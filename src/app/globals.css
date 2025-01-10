@@ -4,7 +4,7 @@
 
 html, body {
   overflow: auto;
-  height: auto;
+  height: 100%;
   margin: 0;
   scroll-behavior: smooth;
 }
@@ -15,5 +15,10 @@ section {
 @layer utilities {
   .custom-gradient {
     background: linear-gradient(90deg, #4831d4 67%, #ccf381 33%);
+  }
+
+  /* For mobile layout */
+  .custom-mobile-gradient {
+    background: linear-gradient(180deg, #4831d4 60%, #ccf381 40%);
   }
 }

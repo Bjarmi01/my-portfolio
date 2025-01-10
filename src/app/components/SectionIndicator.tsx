@@ -7,7 +7,7 @@ export default function SectionIndicator() {
   const { currentSection, setCurrentSection } = useSectionContext();
 
   return (
-    <div className="fixed top-[70%] right-[7em] flex flex-col items-center space-y-4 transform -translate-y-1/2">
+    <div className="fixed top-[70%] right-[2em] md:right-[7em] flex flex-col items-center space-y-4 transform -translate-y-1/2">
       {Array.from({ length: sections }, (_, i) => (
         <div
           key={i}

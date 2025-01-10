@@ -27,7 +27,7 @@ export default function ProjectsSection() {
   return (
     <section 
       id="section4" 
-      className="snap-start h-screen flex flex-col items-center justify-center p-8 bg-[#F9F9F9]"
+      className="snap-start h-screen flex flex-col items-center justify-center p-8 bg-[#F9F9F9] overflow-hidden"
     >
       <div className="flex flex-row container w-full bg-white border border-gray-200 rounded-lg shadow-lg">
         {/* First Section */}

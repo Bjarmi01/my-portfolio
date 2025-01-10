@@ -26,7 +26,7 @@ export default function AboutSection() {
    return (
       <section 
         id="section2" 
-        className="relative snap-start h-screen flex flex-col items-center justify-center px-16 md:px-40"
+        className="relative snap-start h-screen flex flex-col items-center justify-center px-16 md:px-40 overflow-hidden"
       >
       {/* First Row */}
       <div className="flex flex-col md:flex-row justify-between items-center w-full">
