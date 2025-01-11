@@ -1,13 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSectionContext } from '../context/SectionContext';
 
 export const useControlledScroll = (sectionIds: string[]) => {
   const { currentSection, setCurrentSection } = useSectionContext();
   const [isScrolling, setIsScrolling] = useState(false);
 
-  const scrollToSection = (index: number) => {
+  const scrollToSection = useCallback(
+    (index: number) => {
     const targetSection = document.getElementById(sectionIds[index]);
     if (targetSection) {
       targetSection.scrollIntoView({
@@ -15,8 +16,10 @@ export const useControlledScroll = (sectionIds: string[]) => {
         block: 'start',
       });
       setCurrentSection(index);
-    }
-  };
+      }
+    },
+    [sectionIds, setCurrentSection]
+  );
 
   useEffect(() => {
     const handleWheel = (event: WheelEvent) => {

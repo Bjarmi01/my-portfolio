@@ -19,7 +19,7 @@ export default function HeroSection() {
           <div className="relative z-10">
             <div className="w-52 h-52 md:w-72 md:h-72 border border-white">
               <Image
-                src="/images/jakkaföt.jpg"
+                src="/images/jakkafot.jpg"
                 alt="My Photo"
                 width={288}
                 height={288}

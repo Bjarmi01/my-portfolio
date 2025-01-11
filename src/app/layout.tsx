@@ -4,6 +4,7 @@
 import { usePathname } from "next/navigation"
 import { Geist, Geist_Mono } from "next/font/google";
 import { SectionProvider } from "./context/SectionContext";
+import Head from 'next/head';
 import LandingNavbar from "./components/LandingNavbar";
 import DefaultNavbar from "./components/DefaultNavbar";
 import Footer from "./components/Footer";
@@ -28,6 +29,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

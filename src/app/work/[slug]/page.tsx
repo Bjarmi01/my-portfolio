@@ -1,17 +1,15 @@
-import { projects } from "@/app/data/projectsData";
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation';
+import { projects } from '@/app/data/projectsData';
 
-interface ProjectDetailPageProps {
-  params: { slug: string }; // Define params explicitly as an object with a slug key
-}
-
-export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function ProjectDetailPage({ params }: { params: any }) {
+  const { slug } = params;
   const project = projects.find(
-    (p) => p.name.toLowerCase().replace(/\s+/g, '-') === params.slug
+    (p) => p.name.toLowerCase().replace(/\s+/g, '-') === slug
   );
 
   if (!project) {
-    notFound(); // Trigger a 404 if the project isn't found
+    notFound();
   }
 
   return (
@@ -21,9 +19,10 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   );
 }
 
-// Add the generateStaticParams function
-export async function generateStaticParams() {
+// Function to generate static parameters
+export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   return projects.map((project) => ({
     slug: project.name.toLowerCase().replace(/\s+/g, '-'),
   }));
 }
+
