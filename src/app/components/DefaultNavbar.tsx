@@ -23,7 +23,7 @@ export default function DefaultNavbar() {
       <div
         className={`${lilita_one.className} text-[#4831d4] text-3xl md:text-[2.5em] font-bold transition-all duration-300`}
       >
-        <a href="/">Bjarmi</a>
+        <Link href="/">Bjarmi</Link>
       </div>
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -92,10 +92,10 @@ export default function DefaultNavbar() {
         >
           <h3 className="text-[1.5em] md:text-sm text-gray-500 uppercase mb-4">Say Hello</h3>
           <p className="text-[#4831d4]">
-            <a href="mailto:bjarmi2001@gmail.com" className="text-[1.5em] md:text-xl text-[#4831d4] relative group">
+            <Link href="mailto:bjarmi2001@gmail.com" className="text-[1.5em] md:text-xl text-[#4831d4] relative group">
               bjarmi2001@gmail.com
               <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-            </a>
+            </Link>
           </p>
         </div>
 
@@ -105,22 +105,22 @@ export default function DefaultNavbar() {
           }`}
           style={{ transitionDelay: '400ms' }} // Animates after 400ms
         >
-          <a href="https://x.com/BjarmiUr" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
+          <Link href="https://x.com/BjarmiUr" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
             TW
             <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-          </a>
-          <a href="https://github.com/Bjarmi01" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
+          </Link>
+          <Link href="https://github.com/Bjarmi01" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
             GH
             <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-          </a>
-          <a href="https://www.linkedin.com/in/sigur%C3%B0ur-bjarmi-halld%C3%B3rsson-7a14a82a3/" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
+          </Link>
+          <Link href="https://www.linkedin.com/in/sigur%C3%B0ur-bjarmi-halld%C3%B3rsson-7a14a82a3/" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
             LN
             <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-          </a>
-          <a href="https://www.instagram.com/sigurdur.bjarmi/" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
+          </Link>
+          <Link href="https://www.instagram.com/sigurdur.bjarmi/" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
             IN
             <span className="absolute w-1/5 min-w-[1em] h-full opacity-0 top-0 right-0 bg-[#4831d4] transform transition-transform duration-300 group-hover:opacity-20 group-hover:translate-x-[6px]"></span>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

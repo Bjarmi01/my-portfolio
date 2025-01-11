@@ -74,8 +74,8 @@ export default function AboutSection() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            I’m driven by a love for building engaging, high-quality web
-            experiences. Whether it's crafting scalable apps or designing
+            I&apos;m driven by a love for building engaging, high-quality web
+            experiences. Whether it&apos;s crafting scalable apps or designing
             user-centric interfaces, I focus on solving challenges with
             efficiency and creativity.
           </p>

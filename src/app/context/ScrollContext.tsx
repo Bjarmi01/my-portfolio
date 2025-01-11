@@ -67,7 +67,7 @@ export const useControlledScroll = (sectionIds: string[]) => {
       window.removeEventListener('wheel', handleWheel);
       window.removeEventListener('keydown', handleKeydown);
     };
-  }, [currentSection, sectionIds, isScrolling]);
+  }, [currentSection, sectionIds, isScrolling, scrollToSection]);
 
   return sectionIds[currentSection];
 };

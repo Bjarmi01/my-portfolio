@@ -7,10 +7,10 @@ export default function HeroSection() {
         {/* Text Section */}
         <div className="w-full md:w-2/5 text-left mt-[14em] md:mt-0 px-[15vw] md:p-0">
           <h1 className="text-[4.4em] font-bold text-[#ccf381] mb-4 leading-none">
-            Hi, I'm<br />Bjarmi
+            Hi, I&apos;m<br />Bjarmi
           </h1>
           <p className="text-lg text-white max-w-[20em] md:max-w-fit">
-          A passionate software developer crafting thoughtful, high-quality solutions. Let's create something remarkable together.
+          A passionate software developer crafting thoughtful, high-quality solutions. Let&apos;s create something remarkable together.
           </p>
         </div>
 

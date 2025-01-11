@@ -76,7 +76,7 @@ export default function ContactSection() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        Have a question, proposal, or just want <br /> to say hello? Let's connect!
+        Have a question, proposal, or just want <br /> to say hello? Let&apos;s connect!
       </p>
       <form className="w-full max-w-2xl space-y-6" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row md:space-x-14">

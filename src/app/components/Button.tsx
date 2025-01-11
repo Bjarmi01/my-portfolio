@@ -1,5 +1,3 @@
-import React, { MouseEventHandler } from "react";
-
 interface ButtonProps {
   children: React.ReactNode;
   href?: string;
