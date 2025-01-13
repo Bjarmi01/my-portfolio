@@ -1,6 +1,5 @@
 'use client';
 
-// import type { Metadata } from "next";
 import { usePathname } from "next/navigation"
 import { Geist, Geist_Mono } from "next/font/google";
 import { SectionProvider } from "./context/SectionContext";
@@ -31,6 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#4831d4"></meta>
+        <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
       </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

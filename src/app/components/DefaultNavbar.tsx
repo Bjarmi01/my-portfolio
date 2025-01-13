@@ -19,7 +19,7 @@ export default function DefaultNavbar() {
   }, [pathname]);
 
   return (
-    <nav className="flex items-center justify-between px-[2.2em] md:p-[6em] h-[7em] md:h-[11.12em] bg-[#f5f4fc] w-full text-lg z-50 transition-transform duration-300">
+    <nav className="flex items-center justify-between px-[2.2em] md:p-[6em] h-[7em] md:h-[11.12em] bg-[#f5f4fc] border-none shadow-none w-full text-lg z-50 transition-transform duration-300">
       <div
         className={`${lilita_one.className} text-[#4831d4] text-3xl md:text-[2.5em] font-bold transition-all duration-300`}
       >
