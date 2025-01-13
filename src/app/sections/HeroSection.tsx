@@ -5,7 +5,7 @@ export default function HeroSection() {
     <section id="section1" className="relative snap-start h-[90%] w-full custom-mobile-gradient md:custom-gradient z-0 overflow-hidden">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:px-16 h-full px-8">
         {/* Text Section */}
-        <div className="w-full md:w-2/5 text-left mt-[14em] md:mt-0 px-[15vw] md:p-0">
+        <div className="w-full md:w-2/5 text-left mt-0 px-[15vw] md:p-0">
           <h1 className="text-[4.4em] font-bold text-[#ccf381] mb-4 leading-none">
             Hi, I&apos;m<br />Bjarmi
           </h1>

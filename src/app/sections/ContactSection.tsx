@@ -82,60 +82,60 @@ export default function ContactSection() {
         <div className="flex flex-col md:flex-row md:space-x-14">
           {/* Name Input */}
           <div className="flex-1 relative border-b border-gray-300 focus-within:border-[#4831d4] transition-all duration-300">
-            <label
-              htmlFor="name"
-              className="absolute left-0 top-0 text-gray-500 text-sm transition-all duration-300 pointer-events-none peer-focus:text-[#4831d4]"
-            >
-              Your Name
-            </label>
             <input
               id="name"
               type="text"
               placeholder="Enter your name"
               value={formData.name}
               onChange={handleChange}
-              className="peer w-full bg-transparent border-none outline-none text-lg py-6"
+              className="peer w-full bg-transparent border-none outline-none text-lg py-6 text-[#3d155f80] transition-colors duration-300 focus:text-[#4831d4]"
               required
             />
+            <label
+              htmlFor="name"
+              className="absolute left-0 top-0 text-[#3d155f80] text-sm transition-all duration-300 pointer-events-none peer-focus:text-[#4831d4]"
+            >
+              Your Name
+            </label>
           </div>
 
           {/* Email Input */}
           <div className="flex-1 relative mt-6 md:mt-0 border-b border-gray-300 focus-within:border-[#4831d4] transition-all duration-300">
-            <label
-              htmlFor="email"
-              className="absolute left-0 top-0 text-gray-500 text-sm transition-all duration-300 pointer-events-none peer-focus:text-[#4831d4]"
-            >
-              Email Address
-            </label>
             <input
               id="email"
               type="email"
               placeholder="Enter your email address"
               value={formData.email}
               onChange={handleChange}
-              className="peer w-full bg-transparent border-none outline-none text-lg py-6"
+              className="peer w-full bg-transparent border-none outline-none text-lg py-6 text-[#3d155f80] transition-colors duration-300 focus:text-[#4831d4]"
               required
             />
+            <label
+              htmlFor="email"
+              className="absolute left-0 top-0 text-gray-500 text-sm transition-all duration-300 pointer-events-none peer-focus:text-[#4831d4]"
+            >
+              Email Address
+            </label>
           </div>
         </div>
 
         {/* Message Input */}
         <div className="relative border-b border-gray-300 focus-within:border-[#4831d4] transition-all duration-300">
-          <label
-            htmlFor="message"
-            className="absolute left-0 top-0 text-gray-500 text-sm transition-all duration-300 pointer-events-none peer-focus:text-[#4831d4]"
-          >
-            Your Message
-          </label>
           <textarea
             id="message"
             placeholder="Write your message here..."
             value={formData.message}
             onChange={handleChange}
             rows={2}
-            className="peer w-full bg-transparent border-none outline-none text-lg pb-6 mt-6 resize-none"
+            className="peer w-full bg-transparent border-none outline-none text-lg pb-6 mt-6 resize-none text-[#3d155f80] transition-colors duration-300 focus:text-[#4831d4]"
             required
           ></textarea>
+          <label
+            htmlFor="message"
+            className="absolute left-0 top-0 text-gray-500 text-sm transition-all duration-300 pointer-events-none peer-focus:text-[#4831d4]"
+          >
+            Your Message
+          </label>
         </div>
         <div className="flex justify-center items-center">
           <Button type="submit">{loading ? "Sending..." : "Shoot"}</Button>

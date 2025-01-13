@@ -44,7 +44,7 @@ export default function ProjectsSection() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            Open source <br />projects, web apps <br />and experimentals.
+            Open source <br />projects, web apps <br />and other projects.
           </p>
           <Button href="/work" className="px-[3.6em] py-[1em] 1280:px-[4.6em] 1280:py-[1.6em]">SEE MY WORK</Button>
         </div>
@@ -63,7 +63,7 @@ export default function ProjectsSection() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            About design, <br />frontend dev, <br />learning and life.
+            Some articles <br />I&apos;ve written <br />in the past.
           </p>
           <Button href="/articles" className="px-[3.6em] py-[1em] 1280:px-[4.6em] 1280:py-[1.6em]">READ MY ARTICLES</Button>
         </div>

@@ -45,7 +45,7 @@ export default function AboutSection() {
             }`}
           >
             I specialize in full-stack development, cross-platform apps, and
-            serverless architectures. With experience in React, TypeScript, and
+            serverless architectures. With experience in Flutter, NextJS, TypeScript and
             more, I strive to write clean, maintainable code while solving
             real-world problems.
           </p>
@@ -74,7 +74,7 @@ export default function AboutSection() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            I&apos;m driven by a love for building engaging, high-quality web
+            I&apos;m driven to building engaging, high-quality web
             experiences. Whether it&apos;s crafting scalable apps or designing
             user-centric interfaces, I focus on solving challenges with
             efficiency and creativity.

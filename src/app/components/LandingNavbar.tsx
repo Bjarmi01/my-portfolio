@@ -1,29 +1,45 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Lilita_One } from 'next/font/google';
 import Link from 'next/link';
 import { useControlledScroll } from '../context/ScrollContext';
 
 const lilita_one = Lilita_One({
   subsets: ['latin'],
-  weight: '400', // Adjust weights as needed
+  weight: '400',
 });
 
 export default function LandingNavbar() {
-  const visibleSection = useControlledScroll(['section1', 'section2', 'section3', 'section4', 'section5']);
-  const isFirstPage = visibleSection === 'section1';
-  const isThirdPage = visibleSection === 'section3';
+  const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Adjust based on your `md:` breakpoint
+    };
+
+    // Initial check and add resize listener
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const visibleSection = useControlledScroll(isMobile ? [] : ['section1', 'section2', 'section3', 'section4', 'section5']);
+  const isFirstPage = visibleSection === 'section1';
+  const isThirdPage = visibleSection === 'section3';
+  
   return (
-    <nav className="flex items-center justify-between px-[3em] md:p-[6em] h-[7em] md:h-[11.12em] bg-transparent w-full text-lg fixed z-50 transition-transform duration-300">
+    <nav className="flex items-center justify-between px-[2.2em] md:p-[6em] h-[7em] md:h-[11.12em] bg-[#4831d4] md:bg-transparent w-full text-lg relative md:fixed z-50 transition-transform duration-300">
       <div
         className={`${lilita_one.className} text-3xl md:text-[2.5em] font-bold transition-all duration-300 ${
-          isFirstPage ? 'text-[#ccf381]' : isThirdPage ? 'text-[#ccf381] text-[1.8em]' : 'text-[#4831d4] text-[1.8em]'
+          isFirstPage ? 'text-[#ccf381]' : isThirdPage ? 'text-[#ccf381] text-[1.8em]' : isMobile ? 'text-[#ccf381]' :'text-[#4831d4] text-[1.8em]'
         }`}
       >
-        <Link href="/">{isFirstPage ? 'Bjarmi' : 'B'}</Link>
+        <Link href="/">{isFirstPage ? 'Bjarmi' : isMobile ? 'Bjarmi' : 'B'}</Link>
       </div>
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -53,7 +69,7 @@ export default function LandingNavbar() {
           className={`space-y-10 md:space-y-6 mt-8 relative opacity-0 transform translate-x-10 transition-all duration-500 ease-in-out ${
             isOpen ? 'opacity-100 translate-x-0' : ''
           }`}
-          style={{ transitionDelay: '0ms' }} // First item animates immediately
+          style={{ transitionDelay: '0ms' }}
         >
           <li className="relative">
             <Link
@@ -88,7 +104,7 @@ export default function LandingNavbar() {
           className={`space-y-10 md:space-y-3 mt-12 opacity-0 transform translate-x-10 transition-all duration-500 ease-in-out ${
             isOpen ? 'opacity-100 translate-x-0' : ''
           }`}
-          style={{ transitionDelay: '200ms' }} // Animates after 200ms
+          style={{ transitionDelay: '200ms' }}
         >
           <h3 className="text-[1.5em] md:text-sm text-gray-500 uppercase mb-4">Say Hello</h3>
           <p className="text-[#4831d4]">
@@ -103,7 +119,7 @@ export default function LandingNavbar() {
           className={`mt-12 flex space-x-12 md:space-x-4 opacity-0 transform translate-x-10 transition-all duration-500 ease-in-out ${
             isOpen ? 'opacity-100 translate-x-0' : ''
           }`}
-          style={{ transitionDelay: '400ms' }} // Animates after 400ms
+          style={{ transitionDelay: '400ms' }}
         >
           <Link href="https://x.com/BjarmiUr" target="_blank" className="text-xl md:text-md text-[#4831d4] relative group">
             TW
