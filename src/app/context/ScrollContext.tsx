@@ -7,6 +7,8 @@ export const useControlledScroll = (sectionIds: string[]) => {
   const { currentSection, setCurrentSection } = useSectionContext();
   const [isScrolling, setIsScrolling] = useState(false);
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   const scrollToSection = useCallback(
     (index: number) => {
     const targetSection = document.getElementById(sectionIds[index]);
@@ -22,6 +24,8 @@ export const useControlledScroll = (sectionIds: string[]) => {
   );
 
   useEffect(() => {
+    if (isMobile) return;
+    
     const handleWheel = (event: WheelEvent) => {
       event.preventDefault();
 

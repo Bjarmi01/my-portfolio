@@ -2,11 +2,11 @@ import Image from 'next/image';
 
 export default function HeroSection() {
   return (
-    <section id="section1" className="relative snap-start h-[90%] w-full custom-mobile-gradient md:custom-gradient z-0 overflow-hidden">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:px-16 h-full px-8">
+    <section id="section1" className="relative h-[90%] w-full custom-mobile-gradient md:custom-gradient z-0 overflow-hidden">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:px-16 h-full px-8 mt-12">
         {/* Text Section */}
-        <div className="w-full md:w-2/5 text-left mt-0 px-[15vw] md:p-0">
-          <h1 className="text-[4.4em] font-bold text-[#ccf381] mb-4 leading-none">
+        <div className="w-full md:w-2/5 text-left px-[15vw] md:p-0">
+          <h1 className="text-[3.2em] md:text-[4.4em] font-bold text-[#ccf381] mb-4 leading-none">
             Hi, I&apos;m<br />Bjarmi
           </h1>
           <p className="text-lg text-white max-w-[20em] md:max-w-fit">
@@ -15,7 +15,7 @@ export default function HeroSection() {
         </div>
 
         {/* Image Section */}
-        <div className="relative w-full md:w-3/5 flex items-center py-28 md:py-0 justify-center">
+        <div className="relative w-full md:w-3/5 flex items-center pt-28 md:py-0 justify-center">
           <div className="relative z-10">
             <div className="w-52 h-52 md:w-72 md:h-72 border border-white">
               <Image

@@ -62,7 +62,7 @@ export default function ContactSection() {
   return (
     <section 
       id="section5" 
-      className="snap-start h-screen flex flex-col items-center justify-center p-4 overflow-hidden"
+      className="relative h-screen flex flex-col items-center justify-center p-4 overflow-hidden"
     >
       <h1
         className={`text-[2.2em] md:text-[3.2em] text-[#4831d4] font-bold leading-none transform transition-all duration-1000 ease-in-out ${

@@ -16,10 +16,9 @@ export default function LandingNavbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Adjust based on your `md:` breakpoint
+      setIsMobile(window.innerWidth < 768);
     };
 
-    // Initial check and add resize listener
     handleResize();
     window.addEventListener('resize', handleResize);
 
@@ -28,15 +27,23 @@ export default function LandingNavbar() {
     };
   }, []);
 
-  const visibleSection = useControlledScroll(isMobile ? [] : ['section1', 'section2', 'section3', 'section4', 'section5']);
+  const visibleSection = useControlledScroll(['section1', 'section2', 'section3', 'section4', 'section5']);
   const isFirstPage = visibleSection === 'section1';
   const isThirdPage = visibleSection === 'section3';
   
   return (
-    <nav className="flex items-center justify-between px-[2.2em] md:p-[6em] h-[7em] md:h-[11.12em] bg-[#4831d4] md:bg-transparent w-full text-lg relative md:fixed z-50 transition-transform duration-300">
+    <nav className='flex items-center justify-between px-[2.2em] md:p-[6em] h-[7em] md:h-[11.12em] w-full text-lg fixed top-0 z-50 pointer-events-auto transition-transform duration-300 md:bg-transparent'>
       <div
-        className={`${lilita_one.className} text-3xl md:text-[2.5em] font-bold transition-all duration-300 ${
-          isFirstPage ? 'text-[#ccf381]' : isThirdPage ? 'text-[#ccf381] text-[1.8em]' : isMobile ? 'text-[#ccf381]' :'text-[#4831d4] text-[1.8em]'
+        className={`${lilita_one.className} text-3xl md:text-[2.5em] font-bold transition-all duration-300 z-10 ${
+          isOpen && isMobile
+          ? 'text-[#4831d4] mt-4'
+          : isFirstPage
+          ? 'text-[#ccf381]'
+          : isThirdPage
+          ? 'text-[#ccf381] text-[1.8em]'
+          : isMobile
+          ? 'text-[#ccf381]'
+          : 'text-[#4831d4] text-[1.8em]'
         }`}
       >
         <Link href="/">{isFirstPage ? 'Bjarmi' : isMobile ? 'Bjarmi' : 'B'}</Link>
@@ -49,13 +56,13 @@ export default function LandingNavbar() {
         {/* Top line */}
         <span
           className={`block h-[2px] w-full z-10 transform transition-transform duration-300 ease-in-out 
-          ${isOpen ? 'bg-[#4831d4] rotate-45 translate-y-[16px]' : isThirdPage ? 'bg-[#ccf381]' : isFirstPage ? 'bg-[#ccf381] md:bg-[#4831d4]' : 'bg-[#4831d4]'}`}
+          ${isOpen ? 'bg-[#4831d4] rotate-45 translate-y-[16px]' : isThirdPage ? 'bg-[#ccf381]' : isFirstPage ? 'bg-[#ccf381] md:bg-[#4831d4]' : isMobile ? 'bg-[#ccf381]' : 'bg-[#4831d4]'}`}
         ></span>
 
         {/* Bottom line */}
         <span
           className={`block h-[2px] w-2/3 z-10 transform transition-transform duration-300 ease-in-out 
-          ${isOpen ? 'bg-[#4831d4] -rotate-45 w-full z-10' : isThirdPage ? 'bg-[#ccf381]' : isFirstPage ? 'bg-[#ccf381] md:bg-[#4831d4]' : 'bg-[#4831d4]'}`}
+          ${isOpen ? 'bg-[#4831d4] -rotate-45 w-full z-10' : isThirdPage ? 'bg-[#ccf381]' : isFirstPage ? 'bg-[#ccf381] md:bg-[#4831d4]' : isMobile ? 'bg-[#ccf381]' : 'bg-[#4831d4]'}`}
         ></span>
       </button>
       
@@ -66,7 +73,7 @@ export default function LandingNavbar() {
         }`}
       >
       <ul
-          className={`space-y-10 md:space-y-6 mt-8 relative opacity-0 transform translate-x-10 transition-all duration-500 ease-in-out ${
+          className={`space-y-9 md:space-y-6 mt-8 relative opacity-0 transform translate-x-10 transition-all duration-500 ease-in-out ${
             isOpen ? 'opacity-100 translate-x-0' : ''
           }`}
           style={{ transitionDelay: '0ms' }}
@@ -116,7 +123,7 @@ export default function LandingNavbar() {
         </div>
 
         <div
-          className={`mt-12 flex space-x-12 md:space-x-4 opacity-0 transform translate-x-10 transition-all duration-500 ease-in-out ${
+          className={`mt-12 flex space-x-8 md:space-x-4 opacity-0 transform translate-x-10 transition-all duration-500 ease-in-out ${
             isOpen ? 'opacity-100 translate-x-0' : ''
           }`}
           style={{ transitionDelay: '400ms' }}
