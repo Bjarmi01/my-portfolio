@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
+import ProjectDetail from './ProjectDetail';
 import { projects } from '@/app/data/projectsData';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function ProjectDetailPage({ params }: { params: any }) {
+export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const project = projects.find(
     (p) => p.name.toLowerCase().replace(/\s+/g, '-') === slug
@@ -12,17 +12,12 @@ export default function ProjectDetailPage({ params }: { params: any }) {
     notFound();
   }
 
-  return (
-    <main className="min-h-screen flex flex-col items-center bg-[#f5f4fc]">
-      <h1 className="text-4xl font-bold text-[#4831d4]">COMING SOON</h1>
-    </main>
-  );
+  return <ProjectDetail project={project} />;
 }
 
-// Function to generate static parameters
+// Generate Static Parameters
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   return projects.map((project) => ({
     slug: project.name.toLowerCase().replace(/\s+/g, '-'),
   }));
 }
-
