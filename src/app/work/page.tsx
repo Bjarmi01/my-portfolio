@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { projects } from '../data/projectsData';
 import { Project } from '../types/project';
-
+import { projects } from '../data/projectsData';
 
 export default function WorkPage() {
   return (
