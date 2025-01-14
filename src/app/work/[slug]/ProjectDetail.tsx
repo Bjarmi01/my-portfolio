@@ -72,45 +72,49 @@ export default function ProjectDetail({ project }: { project: any }) {
 
       {/* Image Carousel */}
       {project.images ? (
-        <div className="relative max-w-[1200px] w-full h-[600px] mb-8 overflow-hidden">
-          {/* Carousel Wrapper */}
-          <div
-            className="flex transition-transform duration-700 ease-in-out"
-            style={{
-              transform: `translateX(-${currentImageIndex * 100}%)`,
-            }}
-          >
+         <div className="relative max-w-[1200px] w-full h-[600px] mb-8 overflow-hidden">
+            {/* Carousel Wrapper */}
+            <div
+               className="flex transition-transform duration-700 ease-in-out"
+               style={{
+                  transform: `translateX(-${currentImageIndex * 100}%)`,
+               }}
+            >
             {project.images.map((image: string, index: number) => (
-              <div
-                key={index}
-                className="w-full flex-shrink-0 flex items-center justify-center"
-                 style={{ height: '600px' }}
-                >
-                <Image
+               <div
+                  key={index}
+                  className="w-full flex-shrink-0 flex items-center justify-center"
+                  style={{ height: '600px' }}
+                  >
+                  <Image
                   src={image}
                   alt={`${project.name} Image ${index + 1}`}
                   className="w-full h-full object-contain rounded-lg"
                   width={1200}
                   height={600}
-                />
-              </div>
+                  />
+               </div>
             ))}
-          </div>
+            </div>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={handlePrevImage}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200 transition"
-          >
-            &#9664;
-          </button>
-          <button
-            onClick={handleNextImage}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200 transition"
-          >
-            &#9654;
-          </button>
-        </div>
+            {/* Navigation Arrows */}
+            {project.images.length > 1 && (
+               <div>
+               <button
+                  onClick={handlePrevImage}
+                  className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200 transition"
+                  >
+                  &#9664;
+               </button>
+               <button
+                  onClick={handleNextImage}
+                  className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200 transition"
+                  >
+                  &#9654;
+               </button>
+               </div>
+            )}
+         </div>
       ) : (
         <p className="text-gray-500 text-lg">No images available for this project.</p>
       )}

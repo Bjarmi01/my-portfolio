@@ -57,30 +57,25 @@ export const projects = [
      logo: '/images/logos/bf-logo.png',
      description: `
       <p class="text my-5">
-        Beanfee Direct is a web-based platform that connects coffee enthusiasts with local roasters, offering a curated selection of high-quality coffee beans delivered directly to customers' doors. The platform was designed to simplify the coffee buying process, providing a seamless shopping experience that prioritizes quality, sustainability, and community.
+        Beanfee Direct is a cutting-edge extension of the primary Beanfee platform, designed to revolutionize behavioral feedback in the classroom. Beanfee itself stands for "Behavioral and Analysis Feedback," embodying its core philosophy of integrating technology with behavioral training methodologies. Beanfee Direct takes this vision further by providing teachers with tools to set goals, track progress, and reward students based on behavioral milestones, fostering an environment of positive reinforcement and structured growth.
       </p>
       <p class="text my-5">
-        To create Beanfee Direct, I utilized a combination of technologies, including React, TypeScript, and Tailwind CSS, to build a responsive, user-friendly interface. The platform's backend was powered by Firebase, which ensured secure user authentication, real-time data synchronization, and seamless order processing.
+      As the lead programmer for this project, I was responsible for developing and scaling the platform. Built with a robust tech stack leveraging Flutter for cross-platform development, Firebase for real-time synchronization, and TypeScript cloud functions for backend logic—Beanfee Direct offers a seamless user experience for educators and students alike.
+      </p>
+      <p class="text my-5"> Key features include:</p>
+        <ul class="text my-5 list-disc list-inside space-y-3">
+          <li>Goal Setting and Tracking: Teachers can set behavioral goals for students, monitor progress, and provide actionable feedback in real-time.</li>
+          <li>Reward System: A gamified rewards system that motivates students to reach their goals, reinforcing positive behavior.</li>
+          <li>Real-Time Data Insights: Firebase powers synchronized data across devices, ensuring seamless classroom management and communication.</li>
+          <li>Customizable Templates: Teachers can create personalized feedback and goal-setting templates tailored to their classroom dynamics.</li>
+          <li>Scalability and Security: The platform's cloud-based architecture ensures it can handle increasing classroom sizes while maintaining data integrity and security.</li>
+        </ul>
+      <p class="text my-5">
+        The platform emphasizes ease of use, ensuring teachers can focus on teaching while leveraging powerful tools to manage classroom behavior effectively. By combining behavioral science with cutting-edge technology, Beanfee Direct provides a transformative approach to education, making classrooms more engaging, structured, and supportive for both teachers and students.
       </p>
       <p class="text my-5">
-        The development of Beanfee Direct was driven by a desire to bridge the gap between coffee lovers and local roasters, offering a platform that highlighted the unique flavors and stories behind each coffee bean. I worked closely with designers and product managers to create a visually appealing and intuitive interface that showcased the diverse selection of coffee beans available on the platform.
+        You can read more about Beanfee <a href="https://beanfee.com/" class="link text-[#4831d4] underline" target="_blank">HERE</a>.
       </p>
-      <p class="text my-5">
-        A key feature of Beanfee Direct was the ability to discover new coffee beans based on personal preferences and flavor profiles. Users could filter and search for beans based on roast level, origin, flavor notes, and more, allowing them to explore and experiment with different varieties. Additionally, the platform included detailed product pages with information on each coffee bean's origin, processing method, and tasting notes to help users make informed purchasing decisions.
-      </p>
-      <p class="text my-5">
-        The backend of Beanfee Direct played a crucial role in managing user data, order processing, and inventory management. Using Firebase cloud functions and Firestore, I implemented logic for user authentication, order tracking, and inventory updates, ensuring that the platform operated smoothly and efficiently. I also integrated Stripe for secure payment processing, enabling users to make purchases with confidence.
-      </p>
-      <p class="text my-5">
-        User experience was a top priority throughout the development process, and I focused on creating a seamless shopping experience that prioritized ease of use and accessibility. From the onboarding flow to the checkout process, every step was designed to be intuitive and engaging, encouraging users to explore and discover new coffee beans. I also conducted user testing and feedback sessions to refine the platform based on real-world usage and feedback
-      </p>
-      <p class="text my-5">
-        Building Beanfee Direct presented several challenges, including managing complex data structures, optimizing performance, and integrating third-party services. I had to carefully architect the platform to ensure scalability and maintainability, making key decisions about state management, data modeling, and API integrations to create a robust and reliable platform.
-      </p>
-      <p class="text my-5">
-        The result was a platform that combined cutting-edge technologies with a user-centric design approach to deliver a seamless and engaging coffee shopping experience. I worked across various aspects of the project, from frontend development to backend logic, ensuring that every part of the platform worked harmoniously to provide value to users and roasters alike.
-      </p>
-
     `,
     images: [
       '/work-images/beanfee/screen1.png',
@@ -95,24 +90,24 @@ export const projects = [
      logo: '/images/logos/showdeck-logo.png',
      description: `
       <p class="text my-5">
-        Showdeck Chat is a real-time chat application designed to enhance virtual event experiences by providing attendees with a platform to connect, network, and engage with speakers and other participants. The app was created to address the challenges of virtual events, such as limited interaction and engagement, by offering a seamless and interactive chat experience that fosters community and collaboration.
+        Showdeck Chat is an innovative communication tool designed specifically for the showbusiness industry, simplifying and streamlining interactions within production teams. Developed as my final assignment at Reykjavik University, Showdeck Chat was built in collaboration with four other team members, where I took the lead in driving the frontend development. The project utilizes a modern tech stack, including VueJS, TypeScript, and Django, to deliver a responsive and feature-rich user experience.
       </p>
       <p class="text my-5">
-        To develop Showdeck Chat, I utilized a combination of technologies, including React, TypeScript, and Tailwind CSS, to create a responsive and user-friendly interface. The app's backend was powered by Firebase, which enabled real-time chat functionality, secure user authentication, and seamless message synchronization across devices.
+       The primary goal of Showdeck Chat is to address the unique communication challenges faced in the showbusiness industry. Similar to platforms like Slack or Messenger, it facilitates real-time communication and collaboration but is tailored with industry-specific features to enhance efficiency and productivity.
+      </p>
+      <p class="text my-5"> Key features include:</p>
+      <ul class="text my-5 list-disc list-inside space-y-3">
+        <li>Real-Time Messaging: A robust chat interface with support for individual and group conversations, ensuring seamless communication across teams.</li>
+        <li>File Sharing and Collaboration: Easily share scripts, production schedules, and other critical documents within chat threads, keeping everything organized and accessible.</li>
+        <li>Industry-Specific Tools: Features like role-based permissions cater specifically to the needs of showbusiness professionals.</li>
+        <li>Secure and Scalable Backend: Powered by Django, the backend ensures secure data handling and the ability to scale with growing production teams.</li>
+      </ul>
+      <p class="text my-5">
+        Showdeck Chat exemplifies the integration of technical expertise and industry insights to create a tool that addresses the unique challenges of a fast-paced, high-demand environment. By leading the frontend development, I ensured a user-friendly interface along with a graphic designer that enhances collaboration and productivity, providing a seamless experience for all stakeholders in the entertainment industry. This project not only honed my technical skills but also deepened my understanding of creating solutions tailored to niche industries.
       </p>
       <p class="text my-5">
-        The development of Showdeck Chat was driven by a desire to create a platform that facilitated meaningful interactions and connections between event attendees. I worked closely with event organizers and designers to create a chat experience that complemented virtual events, offering features such as message threads, reactions, and private messaging to enhance engagement and participation.
+        You can read more about the project and its development process <a href="https://skemman.is/bitstream/1946/47650/1/Showdeck-Chat.pdf" class="link text-[#4831d4] underline" target="_blank">HERE</a>.
       </p>
-      <p class="text my-5">
-        A key feature of Showdeck Chat was the ability to create dedicated chat rooms for different event sessions, allowing attendees to engage with speakers, ask questions, and connect with other participants. The app also included real-time message updates, notifications, and user profiles to provide a comprehensive chat experience that catered to a wide range of event formats and audiences.
-      </p>
-      <p class="text my-5">
-        The backend of Showdeck Chat played a crucial role in managing chat data, user authentication, and message synchronization. Using Firebase cloud functions and Firestore, I implemented logic for real-time message updates, user authentication, and chat room management, ensuring that the app operated smoothly and efficiently. I also integrated Firebase Cloud Messaging for push notifications, enabling users to stay informed and engaged during events.
-      </p>
-      <p class="text my-5">
-        User experience was a top priority throughout the development process, and I focused on creating a chat interface that was intuitive, engaging, and accessible. From the onboarding flow to the chat experience, every element was designed to be user-friendly and interactive, encouraging attendees to participate and connect with others. I also conducted user testing and feedback sessions to refine the app based on real-world usage and feedback.
-      </p
-
     `,
     images: [
       '/work-images/showdeck/screen1.png',
