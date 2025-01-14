@@ -15,7 +15,7 @@ export default function Footer() {
          {/* Center Section */}
          <div className="flex flex-col space-y-4 mt-8 md:mt-0">
            <Link href="/" className="text-lg hover:underline">Home</Link>
-           <Link href="/articles" className="text-lg hover:underline">My Shelf</Link>
+           <Link href="/articles" className="text-lg hover:underline">My Articles</Link>
            <Link href="/resume" className="text-lg hover:underline">My Résumé</Link>
          </div>
  
@@ -25,18 +25,18 @@ export default function Footer() {
              © Sigurður Bjarmi Halldórsson 2025
            </p>
            <div className="flex justify-center md:justify-end space-x-4 mt-4">
-             <Link href="https://twitter.com/BjarmiUr" target="_blank" rel="noopener noreferrer" className="hover:underline">
-               TW
-             </Link>
-             <Link href="https://github.com/Bjarmi01" target="_blank" rel="noopener noreferrer" className="hover:underline">
-               GH
-             </Link>
-             <Link href="https://www.linkedin.com/in/sigur%C3%B0ur-bjarmi-halld%C3%B3rsson-7a14a82a3/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-               LN
-             </Link>
-             <Link href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
-               YT
-             </Link>
+            <Link href="https://twitter.com/BjarmiUr" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              TW
+            </Link>
+            <Link href="https://github.com/Bjarmi01" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              GH
+            </Link>
+            <Link href="https://www.linkedin.com/in/sigur%C3%B0ur-bjarmi-halld%C3%B3rsson-7a14a82a3/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              LN
+            </Link>
+            <Link href="https://www.instagram.com/sigurdur.bjarmi/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              IN
+            </Link>
            </div>
          </div>
        </div>

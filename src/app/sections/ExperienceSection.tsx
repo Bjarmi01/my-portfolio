@@ -38,21 +38,21 @@ export default function ExperienceSection() {
           My Journey So Far
         </h1>
         <p
-          className={`text-white text-xs md:tex-[1.3em] md:max-w-[27vw] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-300 ${
+          className={`text-white text-xs md:text-base md:max-w-[27vw] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
           In my previous roles, I focused on front-end development using frameworks like Flutter and Vue.js, honing my ability to create intuitive, visually appealing user interfaces. While I initially gained experience with React and TypeScript through academic projects, I quickly developed a strong foundation and a keen eye for design. My adaptability and eagerness to grow have consistently enabled me to master new tools and technologies, allowing me to contribute effectively to dynamic and evolving development stacks.
         </p>
         <p
-          className={`text-white text-xs md:tex-[1.3em] md:max-w-[27vw] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-500 ${
+          className={`text-white text-xs md:text-base md:max-w-[27vw] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
           During my time at Beanfee, working in a startup environment taught me the importance of writing clean, maintainable code and leveraging Git-based workflows for smooth collaboration. Similarly, as an intern at Stokkur, I worked closely with product managers and designers to translate ideas into actionable features, which improved my communication skills and ability to balance technical considerations with user-centric design.
         </p>
         <p
-          className={`hidden md:flex text-white text-xs md:tex-[1.3em] md:max-w-[27vw] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-500 ${
+          className={`hidden md:flex text-white text-xs md:text-base md:max-w-[27vw] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  

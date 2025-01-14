@@ -2,8 +2,8 @@ import { notFound } from 'next/navigation';
 import ProjectDetail from './ProjectDetail';
 import { projects } from '@/app/data/projectsData';
 
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function ProjectDetailPage({ params }: { params: { slug: string } }) {
+  const { slug } = await params;
   const project = projects.find(
     (p) => p.name.toLowerCase().replace(/\s+/g, '-') === slug
   );
