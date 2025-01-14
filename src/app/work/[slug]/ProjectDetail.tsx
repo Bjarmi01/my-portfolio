@@ -1,31 +1,34 @@
 'use client';
 
 import Image from 'next/image';
-import Button from '../../components/Button';
 import { useState, useEffect } from 'react';
+import Button from '../../components/Button';
+import { Project } from '@/app/types/project';
 
-export default function ProjectDetail({ project }: { project: any }) {
+export default function ProjectDetail({ project }: { project: Project }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
 
-  // Automatically slide to the next image every 5 seconds
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [project.images.length]);
+      if (!project.images || project.images.length === 0) return;
+   
+      const imageCount = project.images.length;
+      const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % imageCount);
+      }, 5000);
+   
+      return () => clearInterval(interval);
+   }, [project.images]);
 
   const handleNextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+    setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
   };
 
   const handlePrevImage = () => {
     setCurrentImageIndex((prev) =>
-      prev === 0 ? project.images.length - 1 : prev - 1
+      prev === 0 ? project.images!.length - 1 : prev - 1
     );
   };
 
@@ -121,7 +124,7 @@ export default function ProjectDetail({ project }: { project: any }) {
 
       {/* Image Index */}
       <div className="flex space-x-2 mt-4">
-        {project.images.map((_: string, index: number) => (
+        {project.images!.map((_: string, index: number) => (
           <button
             key={index}
             onClick={() => handleDotClick(index)}
@@ -138,7 +141,7 @@ export default function ProjectDetail({ project }: { project: any }) {
       <div className="text-left max-w-5xl mt-8 mx-auto">
          <div
             className="text-gray-700 text-xl leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: project.description }}
+            dangerouslySetInnerHTML={{ __html: project.description || '' }}
          ></div>
       </div>
 
