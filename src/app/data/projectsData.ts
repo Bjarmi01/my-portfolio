@@ -116,11 +116,13 @@ export const projects: Project[] = [
     ],
    },
    {
-     id: 4,
-     name: 'Bjarmi.dev',
-     siteName: 'bjarmi.dev',
-     internalPage: false,
-     logo: '/images/logos/bjarmi-dev-logo.png',
+      id: 4,
+      name: 'Bjarmi.dev',
+      siteName: 'bjarmi.dev',
+      internalPage: false,
+      logo: '/images/logos/bjarmi-dev-logo.png',
+      description: 'My personal portfolio site.',
+      images: [],
    },
  ];
  

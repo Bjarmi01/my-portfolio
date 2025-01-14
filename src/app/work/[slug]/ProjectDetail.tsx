@@ -14,26 +14,27 @@ export default function ProjectDetail({ project }: { project: Project }) {
   useEffect(() => {
       if (!project.images || project.images.length === 0) return;
    
-      const imageCount = project.images.length;
       const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % imageCount);
-      }, 5000);
+         setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
+       }, 5000);
    
-      return () => clearInterval(interval);
-   }, [project.images]);
+       return () => clearInterval(interval);
+     }, [project.images]);
 
   const handleNextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
+      if (!project.images) return;
+      setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
   };
 
   const handlePrevImage = () => {
-    setCurrentImageIndex((prev) =>
-      prev === 0 ? project.images!.length - 1 : prev - 1
-    );
+      if (!project.images) return;
+      setCurrentImageIndex((prev) =>
+         prev === 0 ? project.images!.length - 1 : prev - 1
+      );
   };
 
   const handleDotClick = (index: number) => {
-    setCurrentImageIndex(index);
+      setCurrentImageIndex(index);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -74,7 +75,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
       <h1 className="text-4xl font-bold text-[#474747] mb-14">{project.name}</h1>
 
       {/* Image Carousel */}
-      {project.images ? (
+      {project.images && project.images.length > 0 ? (
          <div className="relative max-w-[1200px] w-full h-[600px] mb-8 overflow-hidden">
             {/* Carousel Wrapper */}
             <div
@@ -83,7 +84,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
                   transform: `translateX(-${currentImageIndex * 100}%)`,
                }}
             >
-            {project.images.map((image: string, index: number) => (
+            {project.images.map((image, index) => (
                <div
                   key={index}
                   className="w-full flex-shrink-0 flex items-center justify-center"
