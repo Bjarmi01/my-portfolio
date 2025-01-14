@@ -1,14 +1,16 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, useMemo } from 'react';
 import { useSectionContext } from '../context/SectionContext';
 
 export const useControlledScroll = (sectionIds: string[]) => {
   const { currentSection, setCurrentSection } = useSectionContext();
   const [isScrolling, setIsScrolling] = useState(false);
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-
+  const isMobile = useMemo(() => {
+    return typeof window !== 'undefined' && window.innerWidth < 768;
+  }, []);
+  
   const scrollToSection = useCallback(
     (index: number) => {
     const targetSection = document.getElementById(sectionIds[index]);
@@ -74,7 +76,7 @@ export const useControlledScroll = (sectionIds: string[]) => {
       window.removeEventListener('wheel', handleWheel);
       window.removeEventListener('keydown', handleKeydown);
     };
-  }, [currentSection, sectionIds, isScrolling, scrollToSection]);
+  }, [isMobile, currentSection, sectionIds, isScrolling, scrollToSection]);
 
   return sectionIds[currentSection];
 };

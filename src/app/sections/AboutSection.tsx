@@ -31,7 +31,7 @@ export default function AboutSection() {
       {/* First Row */}
       <div className="flex flex-col md:flex-row justify-between items-center w-full">
         {/* Left Side */}
-        <div className="text-left mb-8 md:mb-0">
+        <div className="text-left mb-4 md:mb-0">
         <h1
             className={`text-[3em] md:text-[4em] text-[#4831d4] font-bold transform transition-all duration-700 ease-in-out delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'

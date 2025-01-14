@@ -23,7 +23,15 @@ export default function DefaultNavbar() {
       <div
         className={`${lilita_one.className} text-[#4831d4] text-3xl md:text-[2.5em] font-bold transition-all duration-300`}
       >
-        <Link href="/">Bjarmi</Link>
+        <Link
+          href="/"
+          onClick={(e) => {
+            e.preventDefault(); // Prevent Next.js from handling the routing
+            window.location.href = '/'; // Trigger a full page reload
+          }}
+        >
+          Bjarmi
+        </Link>
       </div>
       <button
         onClick={() => setIsOpen(!isOpen)}

@@ -1,6 +1,8 @@
-import { projects } from '../data/projectsData';
 import Link from 'next/link';
 import Image from 'next/image';
+import { projects } from '../data/projectsData';
+import { Project } from '../types/project';
+
 
 export default function WorkPage() {
   return (
@@ -17,7 +19,7 @@ export default function WorkPage() {
       </header>
 
       <section className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl w-full">
-        {projects.map((project) => (
+        {projects.map((project: Project) => (
           <div
             key={project.id}
             className="bg-white rounded-lg shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-2 duration-500"

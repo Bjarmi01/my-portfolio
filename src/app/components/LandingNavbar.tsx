@@ -46,7 +46,15 @@ export default function LandingNavbar() {
           : 'text-[#4831d4] text-[1.8em]'
         }`}
       >
-        <Link href="/">{isFirstPage ? 'Bjarmi' : isMobile ? 'Bjarmi' : 'B'}</Link>
+        <Link
+          href="/"
+          onClick={(e) => {
+            e.preventDefault(); // Prevent Next.js from handling the routing
+            window.location.href = '/'; // Trigger a full page reload
+          }}
+        >
+          {isFirstPage ? 'Bjarmi' : isMobile ? 'Bjarmi' : 'B'}
+        </Link>
       </div>
       <button
         onClick={() => setIsOpen(!isOpen)}
