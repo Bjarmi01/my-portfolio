@@ -107,4 +107,4 @@ Feel free to reach out to me for job opportunities or collaborations:
 - **Email**: [bjarmi2001@gmail.com](mailto:bjarmi2001@gmail.com)
 - **GitHub**: [github.com/Bjarmi01](https://github.com/Bjarmi01)
 - **LinkedIn**: [Sigurður Bjarmi Halldórsson](https://www.linkedin.com/in/sigur%C3%B0ur-bjarmi-halld%C3%B3rsson-7a14a82a3/)
-- **Portfolio**: [Visit the Live Website](https://your-portfolio-link.com)
+- **Portfolio**: [Visit the Live Website](https://www.bjarmi.dev/)

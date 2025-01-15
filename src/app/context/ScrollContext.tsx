@@ -10,6 +10,13 @@ export const useControlledScroll = (sectionIds: string[]) => {
   const isMobile = useMemo(() => {
     return typeof window !== 'undefined' && window.innerWidth < 768;
   }, []);
+
+  const isFirefox = useMemo(() => {
+    return (
+      typeof navigator !== 'undefined' &&
+      navigator.userAgent.toLowerCase().includes('firefox')
+    );
+  }, []);
   
   const scrollToSection = useCallback(
     (index: number) => {
@@ -29,7 +36,9 @@ export const useControlledScroll = (sectionIds: string[]) => {
     if (isMobile) return;
     
     const handleWheel = (event: WheelEvent) => {
-      event.preventDefault();
+      if (!isFirefox) {
+        event.preventDefault(); // Only prevent default on non-Firefox browsers
+      }    
 
       if (isScrolling) return;
       
@@ -76,7 +85,7 @@ export const useControlledScroll = (sectionIds: string[]) => {
       window.removeEventListener('wheel', handleWheel);
       window.removeEventListener('keydown', handleKeydown);
     };
-  }, [isMobile, currentSection, sectionIds, isScrolling, scrollToSection]);
+  }, [isFirefox, isMobile, currentSection, sectionIds, isScrolling, scrollToSection]);
 
   return sectionIds[currentSection];
 };

@@ -106,7 +106,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
                <div>
                <button
                   onClick={handlePrevImage}
-                  className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200 transition"
+                  className="absolute top-1/2 --left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200 transition"
                   >
                   &#9664;
                </button>
