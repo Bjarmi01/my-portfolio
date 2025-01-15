@@ -19,7 +19,11 @@ export default function DefaultNavbar() {
   }, [pathname]);
 
   return (
-    <nav className="flex items-center justify-between px-[2.2em] md:p-[6em] h-[7em] md:h-[11.12em] bg-[#f5f4fc] border-none shadow-none w-full text-lg z-50 transition-transform duration-300">
+    <nav 
+    className={`flex items-center justify-between px-[2.2em] md:p-[6em] h-[7em] md:h-[11.12em] bg-[#f5f4fc] border-none shadow-none w-full text-lg z-50 transition-transform duration-300 ${
+      isOpen ? 'fixed md:relative' : ''
+    }`}
+    >
       <div
         className={`${lilita_one.className} text-[#4831d4] text-3xl md:text-[2.5em] font-bold transition-all duration-300`}
       >
@@ -53,8 +57,8 @@ export default function DefaultNavbar() {
 
       {/* Drawer */}
       <div
-        className={`flex flex-col z-10 justify-around fixed md:justify-normal md:absolute w-full left-0 top-0 bottom-0 right-0 md:w-[22em] md:top-[1.4em] md:right-[3.41em] md:left-auto md:bottom-auto bg-white text-base shadow-md p-[3.5em] md:my-[1.2em] transform transition-transform duration-500 ease-in-out ${
-          isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+        className={`fixed md:absolute z-10 justify-around left-0 top-0 bottom-0 w-full md:justify-normal md:w-[22em] md:top-[1.4em] md:right-[3.41em] md:left-auto md:bottom-auto bg-white text-base shadow-md p-[3.5em] md:my-[1.2em] transform transition-transform duration-500 ease-in-out ${
+          isOpen ? 'translate-x-0 opacity-100 overflow-hidden md:overflow-auto' : 'translate-x-full opacity-0'
         }`}
       >
       <ul

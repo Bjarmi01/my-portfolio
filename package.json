@@ -12,6 +12,7 @@
     "jspdf": "^2.5.2",
     "next": "^15.1.4",
     "nodemailer": "^6.9.16",
+    "puppeteer": "^24.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^9.0.3",

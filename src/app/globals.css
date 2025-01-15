@@ -24,7 +24,7 @@ section {
     overflow: visible;
     scroll-snap-align: none;
     height: auto;
-    min-height: 100vh;
+    min-height: auto;
   }
 }
 

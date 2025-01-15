@@ -2,36 +2,22 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import jsPDF from 'jspdf';
 import { resumeData } from "../data/resumeData";
 
 export default function ResumePage() {
   const {education, technicalSkills, experience, references } = resumeData;
 
-  const downloadPDF = () => {
-    const element = document.querySelector('#resume-content');
-    if (!element) {
-      console.error('Resume content not found!');
-      return;
-    }
-  
-    const doc = new jsPDF('p', 'pt', 'a4');
-    doc.html(element as HTMLElement, {
-      callback: function (doc) {
-        doc.save('resume.pdf');
-      },
-      x: 10,
-      y: 10,
-      html2canvas: {
-        scale: 0.5, // Scale the content to fit within A4 dimensions
-      },
-    });
-  };  
-
   return (
     <main className="bg-white">
-      <div className="relative flex flex-row bg-[#f5f4fc] xl:my-[15em] xl:mx-[10em] py-[13em] xl:py-[6.7em] px-[3.5em] rounded-lg" id="resume-content">
-        <div className="absolute right-[2em] top-[2em] flex items-center space-x-4">
+      <div className="relative flex flex-col md:flex-row bg-[#f5f4fc] xl:my-[15em] xl:mx-[10em] py-[5em] md:py-[13em] xl:py-[6.7em] px-[3.5em] rounded-lg" id="resume-content">
+        <div className="absolute right-[2em] top-[2em] flex items-center space-x-6">
+          <a
+            href="https://bjarmi.dev"
+            target="_blank"
+            className="relative inline-block md:hidden text-[#4831d4] text-lg font-bold z-0 after:content-[''] after:bg-[#ccf381] after:h-[0.6em] after:w-[109%] after:block after:absolute after:-mt-2.5 after:-ml-[4%] after:-z-10 after:transition-transform after:duration-300 hover:after:translate-y-[0.2em] hover:after:scale-y-50"
+            >
+            bjarmi.dev
+          </a>
           <Link 
             href="https://www.linkedin.com/in/sigur%C3%B0ur-bjarmi-halld%C3%B3rsson-7a14a82a3/" 
             target="_blank"
@@ -47,8 +33,23 @@ export default function ResumePage() {
               className="object-cover"
             />
           </Link>
-          <button
-            onClick={downloadPDF}
+          <Link 
+            href="mailto:bjarmi2001@gmail.com" 
+            rel="noopener noreferrer"
+            aria-label="Email me"
+            className="flex md:hidden cursor-pointer"  
+          >
+            <Image
+              src="/images/mail-icon.svg"
+              alt="LinkedIn Icon"
+              width={20}
+              height={20}
+              className="object-cover"
+            />
+          </Link>
+          <Link
+            href="/Resume_Bjarmi.pdf"
+            target="_blank"
             className="flex items-center space-x-2 text-[#4831d4] font-semibold cursor-pointer"
           >
             <Image
@@ -59,10 +60,11 @@ export default function ResumePage() {
               className="object-cover"
             />
             <span>Download</span>
-          </button>
+          </Link>
         </div>
-        <section className="flex flex-col mr-24">
-          <div className="flex items-baseline">
+
+        <section className="flex flex-col m-0 md:mr-24">
+          <div className="hidden md:flex items-baseline">
             <a
               href="https://bjarmi.dev"
               target="_blank"
@@ -71,8 +73,8 @@ export default function ResumePage() {
               bjarmi.dev
             </a>
           </div>
-          <span className="text-lg">Reykjavík, Iceland</span>
-          <div className="flex items-baseline">
+          <span className="hidden md:flex text-lg">Reykjavík, Iceland</span>
+          <div className="hidden md:flex items-baseline">
             <a
               href="mailto:bjarmi2001@gmail.com"
               className="relative inline-block text-[#4831d4] text-lg font-bold z-0 mb-[2em] after:content-[''] after:bg-[#ccf381] after:h-[0.6em] after:w-[109%] after:block after:absolute after:top-[60%] after:left-[-4%] after:-z-10 after:transition-transform after:duration-300 hover:after:translate-y-[0.2em] hover:after:scale-y-50"
@@ -80,9 +82,9 @@ export default function ResumePage() {
               bjarmi2001@gmail.com
             </a>
           </div>
-          <div className="gap-4">
+          <div className="grid grid-cols-2 gap-0 md:gap-4 md:block mb-4 md:mb-0">
             {Object.entries(technicalSkills).map(([category, skills]) => (
-              <div key={category} className="mb-[2em]">
+              <div key={category} className="mb-2 md:mb-[2em]">
                 <h2 className="text-xl font-bold text-[#4831d4]">{category}</h2>
                 <ul className="list-none">
                   {skills.map((skill, idx) => (
@@ -98,15 +100,16 @@ export default function ResumePage() {
             ))}
           </div>
         </section>
+
         <div>
           <header className="text-left mb-16">
             <h1 className="text-6xl leading-none font-bold text-[#4831d4] mb-[0.5em]">Sigurður Bjarmi<br />Halldórsson</h1>
             <h2 className="text-gray-600 text-[1.6em] m-0 max-w-[70%]">Frontend Developer with Expertise in Modern Technologies and Distributed Systems.</h2>
             <p className="text-gray-600 max-w-[70%] text-[1.2em] mt-[2em]">
             Experienced in full-stack and cross-platform development, I specialize in 
-    creating scalable, efficient, and user-friendly solutions. With a strong foundation 
-    in Flutter, Vue.js, and TypeScript, I thrive on solving complex problems, 
-    collaborating with teams, and building impactful software solutions.
+            creating scalable, efficient, and user-friendly solutions. With a strong foundation 
+            in Flutter, Vue.js, and TypeScript, I thrive on solving complex problems, 
+            collaborating with teams, and building impactful software solutions.
             </p>
             <hr className="border-t border-gray-300 mt-12 w-[110%] -ml-[8%]" />
           </header>
