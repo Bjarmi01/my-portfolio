@@ -1,5 +1,6 @@
 'use client';
 
+import { Analytics } from "@vercel/analytics/react"
 import { usePathname } from "next/navigation"
 import { Geist, Geist_Mono } from "next/font/google";
 import { SectionProvider } from "./context/SectionContext";
@@ -40,6 +41,7 @@ export default function RootLayout({
         <SectionProvider>
           {pathname === '/' ? <LandingNavbar /> : <DefaultNavbar />}
           {children}
+          <Analytics />
           {pathname === '/' ? '' : <Footer />}
         </SectionProvider>
       </body>
