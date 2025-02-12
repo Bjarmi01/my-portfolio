@@ -31,7 +31,7 @@ export default function ExperienceSection() {
       >
       <div className='w-full md:w-1/2'>
       <h1
-          className={`text-[#ccf381] md:max-w-[25vw] leading-none text-xl md:text-[4em] font-bold transform transition-all duration-500 ease-in-out delay-300 ${
+          className={`text-[#ccf381] md:max-w-[20vw] leading-none text-xl md:text-[4em] font-bold transform transition-all duration-500 ease-in-out delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >

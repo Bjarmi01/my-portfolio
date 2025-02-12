@@ -31,7 +31,7 @@ export default function ProjectsSection() {
     >
       <div className="flex flex-col xl:flex-row container h-full xl:h-auto w-full bg-white border border-gray-200 rounded-lg shadow-lg">
         {/* First Section */}
-        <div className="flex-1 flex flex-col items-start justify-center p-6 md:py-[4em] md:px-[6em] xl:p-[7em] border-b  xl:border-r border-[#4831d44d]">
+        <div className="flex-1 flex flex-col items-start justify-center p-6 md:py-[4em] md:px-[6em] xl:p-[7em] border-b  xl:border-b-0 xl:border-r border-[#4831d44d]">
         <h1
             className={`text-3xl md:text-[2.2em]  xl:text-[3.2em] text-[#4831d4] font-black mb-4 leading-none transform transition-all duration-1000 ease-in-out ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'

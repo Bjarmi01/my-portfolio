@@ -26,7 +26,7 @@ export default function ResumePage() {
             className="cursor-pointer"  
           >
             <Image
-              src="/images/linkedin-icon.svg"
+              src="/images/icons/linkedin-icon.svg"
               alt="LinkedIn Icon"
               width={20}
               height={20}
@@ -40,7 +40,7 @@ export default function ResumePage() {
             className="flex md:hidden cursor-pointer"  
           >
             <Image
-              src="/images/mail-icon.svg"
+              src="/images/icons/mail-icon.svg"
               alt="LinkedIn Icon"
               width={20}
               height={20}
@@ -53,7 +53,7 @@ export default function ResumePage() {
             className="flex items-center space-x-2 text-[#4831d4] font-semibold cursor-pointer"
           >
             <Image
-              src="/images/download-icon.svg"
+              src="/images/icons/download-icon.svg"
               alt="Download Icon"
               width={20}
               height={20}
