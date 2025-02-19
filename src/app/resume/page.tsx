@@ -48,7 +48,7 @@ export default function ResumePage() {
             />
           </Link>
           <Link
-            href="/Resume_Bjarmi.pdf"
+            href="/Sigurður_Bjarmi_Halldórsson_Resume.pdf"
             target="_blank"
             className="flex items-center space-x-2 text-[#4831d4] font-semibold cursor-pointer"
           >
