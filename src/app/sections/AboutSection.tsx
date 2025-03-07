@@ -44,7 +44,7 @@ export default function AboutSection() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            I'm a full-stack developer passionate about building seamless, efficient digital experiences. My tech stack includes Next.js, Flutter, Vue.js, TypeScript, Django, FastAPI, and Firebase. I focus on writing clean, scalable code, continuously expanding my knowledge in both frontend and backend technologies. View my projects on 
+            I&apos;m a full-stack developer passionate about building seamless, efficient digital experiences. My tech stack includes Next.js, Flutter, Vue.js, TypeScript, Django, FastAPI, and Firebase. I focus on writing clean, scalable code, continuously expanding my knowledge in both frontend and backend technologies. View my projects on 
             <a
               href="https://bjarmi.dev/work"
               className="relative inline-block ml-2 text-[#4831d4] text-[19px] md:text-[22px] font-bold z-0 after:content-[''] after:bg-[#ccf381] after:h-[0.6em] after:w-[109%] after:block after:absolute after:-mt-2.5 after:-ml-[4%] after:-z-10 after:transition-transform after:duration-300 hover:after:translate-y-[0.2em] hover:after:scale-y-50"
