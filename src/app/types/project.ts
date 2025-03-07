@@ -1,3 +1,8 @@
+export interface TechItem {
+  name: string;
+  icon: string;
+}
+
 export interface Project {
   id: number;
   name: string;
@@ -6,4 +11,5 @@ export interface Project {
   siteName?: string;
   description?: string;
   images?: string[];
+  techStack?: TechItem[];
 }

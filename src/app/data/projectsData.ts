@@ -51,6 +51,11 @@ export const projects: Project[] = [
       '/work-images/atlas-active/screen12.png',
       '/work-images/atlas-active/screen13.png',
     ],
+    techStack: [
+      { name: 'Flutter', icon: '/images/icons/flutter-original.svg' },
+      { name: 'TypeScript', icon: '/images/icons/typescript-original.svg' },
+      { name: 'Firebase', icon: '/images/icons/firebase-plain.svg' },
+    ],
    },
    {
      id: 2,
@@ -84,6 +89,11 @@ export const projects: Project[] = [
       '/work-images/beanfee/screen2.png',
       '/work-images/beanfee/screen3.png',
     ],
+    techStack: [
+      { name: 'Flutter', icon: '/images/icons/flutter-original.svg' },
+      { name: 'TypeScript', icon: '/images/icons/typescript-original.svg' },
+      { name: 'Firebase', icon: '/images/icons/firebase-plain.svg' },
+    ],
    },
    {
      id: 3,
@@ -114,6 +124,13 @@ export const projects: Project[] = [
     images: [
       '/work-images/showdeck/screen1.png',
     ],
+    techStack: [
+      { name: 'Vue.js', icon: '/images/icons/vuejs-original.svg' },
+      { name: 'TailwindCSS', icon: '/images/icons/tailwindcss-plain.svg' },
+      { name: 'TypeScript', icon: '/images/icons/typescript-original.svg' },
+      { name: 'Socket.io', icon: '/images/icons/socketio-original.svg' },
+      { name: 'FastAPI', icon: '/images/icons/fastapi_icon.svg' },
+    ],
    },
    {
       id: 4,
@@ -123,6 +140,27 @@ export const projects: Project[] = [
       logo: '/images/logos/bjarmi-dev-logo.png',
       description: 'My personal portfolio site.',
       images: [],
+      techStack: [
+        { name: 'Next.js', icon: '/images/icons/nextjs-original-wordmark.svg' },
+        { name: 'TailwindCSS', icon: '/images/icons/tailwindcss-plain.svg' },
+        { name: 'TypeScript', icon: '/images/icons/typescript-original.svg' },
+      ],
    },
+    {
+        id: 5,
+        name: 'PolarVault',
+        internalPage: true,
+        logo: '/images/logos/polarvault-logo.png',
+        description: 'Coming soon...',
+        images: [],
+        techStack: [
+          { name: 'Next.js', icon: '/images/icons/nextjs-original-wordmark.svg' },
+          { name: 'TailwindCSS', icon: '/images/icons/tailwindcss-plain.svg' },
+          { name: 'TypeScript', icon: '/images/icons/typescript-original.svg' },
+          { name: 'FastAPI', icon: '/images/icons/fastapi_icon.svg' },
+          { name: 'SQLite', icon: '/images/icons/sqlite-original.svg' },
+          { name: 'AWS', icon: '/images/icons/amazonwebservices-original.svg' },
+        ],
+    },
  ];
  

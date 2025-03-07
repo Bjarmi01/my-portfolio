@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Project } from '../types/project';
 import { projects } from '../data/projectsData';
+import TechIndicators from '../components/TechIndicator';
 
 export default function WorkPage() {
   return (
@@ -17,7 +18,7 @@ export default function WorkPage() {
         </p>
       </header>
 
-      <section className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl w-full">
+      <section className="grid gap-6 grid-cols-1 lg:grid-cols-2 max-w-7xl w-full">
         {projects.map((project: Project) => (
           <div
             key={project.id}
@@ -33,23 +34,21 @@ export default function WorkPage() {
               rel={project.internalPage ? '' : 'noopener noreferrer'}
               className="block"
             >
-              <figure className="h-[10em] flex items-center justify-center bg-[#f7f6fa]">
+              <figure className="h-64 flex items-center justify-center bg-[#f7f6fa]">
                 {project.logo && (
                     <Image
                       src={project.logo}
                       alt={`${project.name} logo`}
-                      width={140}
-                      height={140}
+                      width={220}
+                      height={220}
                       className="object-contain"
                     />
                   )}
               </figure>
-              <div className="p-[2em]">
-                <h5 className="text-xl font-semibold text-[#474747] ">{project.name}</h5>
-                {project.siteName && (
-                  <p className="text-sm text-[#4831d4] mt-2">
-                    Visit: <span>{project.siteName}</span>
-                  </p>
+              <div className="p-7">
+                <h5 className="text-2xl font-semibold text-[#474747] ">{project.name}</h5>
+                {project.techStack && (
+                  <TechIndicators items={project.techStack} />
                 )}
               </div>
             </Link>

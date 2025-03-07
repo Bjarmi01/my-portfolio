@@ -78,7 +78,7 @@ export default function ContactSection() {
       >
         Have a question, proposal, or just want <br /> to say hello? Let&apos;s connect!
       </p>
-      <form className="w-full max-w-2xl space-y-6" onSubmit={handleSubmit}>
+      <form className="w-full max-w-3xl space-y-6" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row md:space-x-14">
           {/* Name Input */}
           <div className="flex-1 relative border-b border-gray-300 focus-within:border-[#4831d4] transition-all duration-300">
