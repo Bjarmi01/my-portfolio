@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function HeroSection() {
   return (
     <section id="section1" className="relative h-full md:h-[90%] w-full custom-mobile-gradient md:custom-gradient z-0 overflow-hidden">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-normal md:justify-center md:px-16 h-full px-8 mt-40 md:mt-5">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-normal md:justify-center md:px-16 h-full px-8 mt-28 md:mt-5">
         {/* Text Section */}
         <div className="w-full md:w-2/5 text-left px-4 md:p-0">
           <h1 className="text-6xl md:text-8xl font-bold text-[#ccf381] mb-4 leading-none">
@@ -15,9 +15,9 @@ export default function HeroSection() {
         </div>
 
         {/* Image Section */}
-        <div className="relative w-full md:w-3/5 flex items-center pt-40 md:py-0 justify-center">
+        <div className="relative w-full md:w-3/5 flex items-center pt-32 md:py-0 justify-center">
           <div className="relative z-10">
-            <div className="w-56 h-56 md:w-96 md:h-96 border-2 border-white">
+            <div className="w-52 h-52 md:w-96 md:h-96 border-2 border-white">
               <Image
                 src="/images/handsome.jpeg"
                 alt="My Photo"

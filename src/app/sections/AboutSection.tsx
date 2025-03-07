@@ -33,7 +33,7 @@ export default function AboutSection() {
         {/* Left Side */}
         <div className="text-left mb-4 md:mb-0">
         <h1
-            className={`text-4xl md:text-6xl pb-4 text-[#4831d4] font-bold transform transition-all duration-700 ease-in-out delay-300 ${
+            className={`text-4xl md:text-6xl pb-1 md:pb-4 text-[#4831d4] font-bold transform transition-all duration-700 ease-in-out delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
@@ -59,14 +59,14 @@ export default function AboutSection() {
       </div>
 
       {/* Second Row */}
-      <div className="flex flex-col-reverse md:flex-row justify-between items-center w-full mt-12">
+      <div className="flex flex-col-reverse md:flex-row justify-between items-center w-full mt-6 md:mt-12">
         <div className="hidden md:block ml-10">
           <svg xmlns="http://www.w3.org/2000/svg" width="275" height="143" viewBox="0 0 325 193" data-shape="true" aria-hidden="true" id="cs-pattern-left"><path fill="none" stroke="#4831d4" strokeMiterlimit="50" strokeWidth="2" d="M17.053 9.57a7.891 7.891 0 11-15.782 0 7.891 7.891 0 0115.782 0zM45.122 9.57a7.891 7.891 0 11-15.782 0 7.891 7.891 0 0115.782 0zM73.19 9.57a7.891 7.891 0 11-15.781 0 7.891 7.891 0 0115.782 0zM101.26 9.57a7.891 7.891 0 11-15.782 0 7.891 7.891 0 0115.782 0zM129.329 9.57a7.891 7.891 0 11-15.783 0 7.891 7.891 0 0115.783 0zM238.083 103.963v0l-.561 22.259v0l22.259-.561v0l-.561 22.258v0l22.259-.56v0l-.561 22.258v0l22.259-.56v0l-.559 22.26v0l22.26-.56v0"></path></svg>
         </div>
         {/* Right Side */}
         <div className="text-left md:ml-12">
         <h1
-            className={`text-4xl md:text-6xl pb-4 text-[#4831d4] font-bold transform transition-all duration-700 ease-in-out delay-300 ${
+            className={`text-4xl md:text-6xl pb-1 md:pb-4 text-[#4831d4] font-bold transform transition-all duration-700 ease-in-out delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >

@@ -69,14 +69,14 @@ export default function ExperienceSection() {
         </p>
 
         <h3
-          className={`text-white text-xl md:text-3xl md:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-700 ${
+          className={`hidden md:flex text-white text-xl md:text-3xl md:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
           Stokkur: Agile Development
         </h3>
         <p
-          className={`text-white text-md md:text-xl md:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-700 ${
+          className={`hidden md:flex text-white text-md md:text-xl md:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
