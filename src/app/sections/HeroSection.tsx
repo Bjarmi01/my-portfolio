@@ -6,10 +6,10 @@ export default function HeroSection() {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:px-16 h-full px-8 mt-5">
         {/* Text Section */}
         <div className="w-full md:w-2/5 text-left px-[15vw] md:p-0">
-          <h1 className="text-[3.2em] md:text-[4.4em] font-bold text-[#ccf381] mb-4 leading-none">
+          <h1 className="text-[3.2em] md:text-8xl font-bold text-[#ccf381] mb-4 leading-none">
             Hi, I&apos;m<br />Bjarmi
           </h1>
-          <p className="text-lg text-white max-w-[20em] md:max-w-fit">
+          <p className="text-xl text-white max-w-[20em] md:max-w-fit">
           A passionate software developer crafting thoughtful, high-quality solutions. Let&apos;s create something remarkable together.
           </p>
         </div>
@@ -17,12 +17,12 @@ export default function HeroSection() {
         {/* Image Section */}
         <div className="relative w-full md:w-3/5 flex items-center pt-12 md:py-0 justify-center">
           <div className="relative z-10">
-            <div className="w-44 h-44 md:w-72 md:h-72 border border-white">
+            <div className="w-44 h-44 md:w-96 md:h-96 border-2 border-white">
               <Image
                 src="/images/handsome.jpeg"
                 alt="My Photo"
-                width={288}
-                height={288}
+                width={420}
+                height={420}
                 className="object-contain mt-[-12px] ml-[-12px]"
                 />
             </div>

@@ -26,28 +26,31 @@ export default function AboutSection() {
    return (
       <section 
         id="section2" 
-        className="bg-white relative h-screen flex flex-col items-center justify-center px-16 md:px-40 overflow-hidden"
+        className="relative h-screen flex flex-col items-center justify-center px-16 md:px-40 overflow-hidden"
       >
       {/* First Row */}
       <div className="flex flex-col md:flex-row justify-between items-center w-full">
         {/* Left Side */}
         <div className="text-left mb-4 md:mb-0">
         <h1
-            className={`text-[3em] md:text-[4em] text-[#4831d4] font-bold transform transition-all duration-700 ease-in-out delay-300 ${
+            className={`text-4xl md:text-6xl pb-4 text-[#4831d4] font-bold transform transition-all duration-700 ease-in-out delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
             About Me
           </h1>
           <p
-            className={`max-w-md text-lg leading-relaxed text-gray-600 transform transition-all duration-700 ease-in-out delay-500 ${
+            className={`max-w-xl text-[22px] leading-relaxed text-gray-600 transform transition-all duration-700 ease-in-out delay-500 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            I specialize in full-stack development, cross-platform apps, and
-            serverless architectures. With experience in Flutter, NextJS, TypeScript and
-            more, I strive to write clean, maintainable code while solving
-            real-world problems.
+            I'm a full-stack developer passionate about building seamless, efficient digital experiences. My tech stack includes Next.js, Flutter, Vue.js, TypeScript, Django, FastAPI, and Firebase. I focus on writing clean, scalable code, continuously expanding my knowledge in both frontend and backend technologies. View my projects on 
+            <a
+              href="https://bjarmi.dev/work"
+              className="relative inline-block ml-2 text-[#4831d4] text-xl font-bold z-0 after:content-[''] after:bg-[#ccf381] after:h-[0.6em] after:w-[109%] after:block after:absolute after:-mt-2.5 after:-ml-[4%] after:-z-10 after:transition-transform after:duration-300 hover:after:translate-y-[0.2em] hover:after:scale-y-50"
+              >
+              bjarmi.dev/work
+            </a>
           </p>
         </div>
         <div className="hidden md:block mr-32">
@@ -63,21 +66,18 @@ export default function AboutSection() {
         {/* Right Side */}
         <div className="text-left md:ml-12">
         <h1
-            className={`text-[3em] md:text-[4em] text-[#4831d4] font-bold transform transition-all duration-700 ease-in-out delay-300 ${
+            className={`text-4xl md:text-6xl pb-4 text-[#4831d4] font-bold transform transition-all duration-700 ease-in-out delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
             Engineering
           </h1>
           <p
-            className={`max-w-md text-lg leading-relaxed text-gray-600 transform transition-all duration-700 ease-in-out delay-500 ${
+            className={`max-w-xl text-[22px] leading-relaxed text-gray-600 transform transition-all duration-700 ease-in-out delay-500 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            I&apos;m driven to building engaging, high-quality web
-            experiences. Whether it&apos;s crafting scalable apps or designing
-            user-centric interfaces, I focus on solving challenges with
-            efficiency and creativity.
+            I build robust applications prioritizing clean architecture, scalability, and user-centric design. I collaborate closely with cross-functional teams, utilizing agile practices and iterative development to deliver high-quality, practical solut
           </p>
         </div>
       </div>

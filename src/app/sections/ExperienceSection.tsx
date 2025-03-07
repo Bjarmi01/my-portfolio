@@ -31,40 +31,92 @@ export default function ExperienceSection() {
       >
       <div className='w-full md:w-1/2'>
       <h1
-          className={`text-[#ccf381] md:max-w-[20vw] leading-none text-xl md:text-[4em] font-bold transform transition-all duration-500 ease-in-out delay-300 ${
+          className={`text-[#ccf381] md:max-w-[450px] leading-none text-2xl md:text-6xl font-bold transform transition-all duration-500 ease-in-out delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          My Journey So Far
+          My Experience 
         </h1>
-        <p
-          className={`text-white text-xs md:text-base md:max-w-[27vw] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-300 ${
+
+        <h3
+          className={`text-white text-md md:text-3xl md:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
-          I specialize in front-end development, leveraging frameworks like Flutter and Vue.js to create intuitive user interfaces. While I gained foundational skills in React and TypeScript through academic projects, I quickly developed a strong ability to design and adapt to evolving technologies.
+          Full-Stack Skills
+        </h3>
+        <p
+          className={`text-white text-xs md:text-xl md:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-300 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >  
+          Proficient in frameworks like Flutter, Vue.js, Next.js, and TypeScript, and backend technologies including Django, Firebase, and serverless architectures
+        </p>
+
+        <h3
+          className={`text-white text-md md:text-3xl md:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-500 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >  
+          Beanfee: Leadership & Growth
+        </h3>
+        <p
+          className={`text-white text-xs md:text-xl md:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-500 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >  
+          Led frontend development of a Flutter app focused on classroom engagement. Managed features, ensured scalable code, and collaborated effectively with multidisciplinary teams.
+        </p>
+
+        <h3
+          className={`text-white text-md md:text-3xl md:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >  
+          Stokkur: Agile Development
+        </h3>
+        <p
+          className={`text-white text-xs md:text-xl md:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >  
+          Worked within an agile team developing performant Flutter mobile apps. Engaged in sprint planning, rigorous code reviews, and feedback loops for rapid, high-quality development.
+        </p>
+
+        <h3
+          className={`text-white text-md md:text-3xl md:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >  
+          Academic Project: Showdeck
+        </h3>
+        <p
+          className={`text-white text-xs md:text-xl md:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >  
+          Developed a real-time chat feature as an extension of Showdeck&apos;s existing website using Vue.js, TypeScript, Django, and Tailwind CSS. I Led the frontend development, contributed to backend integration, and helped deliver a polished, collaborative solution along with my team.
         </p>
         <p
-          className={`text-white text-xs md:text-base md:max-w-[27vw] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-500 ${
+          className={`text-white text-xs md:text-xl md:max-w-[750px] mt-4 leading-relaxed transform transition-all duration-500 ease-in-out delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
-          At Beanfee, I honed my skills in writing clean, maintainable code while thriving in a fast-paced startup environment. As an intern at Stokkur, I collaborated with product managers and designers to turn ideas into functional features, sharpening my communication and problem-solving skills.
-        </p>
-        <p
-          className={`hidden md:flex text-white text-xs md:text-base md:max-w-[27vw] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-500 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >  
-          During my final project at Reykjavik University, I integrated technologies like Vue.js, Tailwind CSS, TypeScript, and Django to develop a real-time communication tool. This experience enhanced my ability to deliver user-focused solutions through cross-disciplinary collaboration.
+          See more details on 
+          <a
+            href="https://bjarmi.dev/work"
+            className="relative inline-block ml-2 text-[#ccf381] text-lg font-bold z-0 after:content-[''] after:bg-[#1f1753] after:h-[0.6em] after:w-[109%] after:block after:absolute after:-mt-2.5 after:-ml-[4%] after:-z-10 after:transition-transform after:duration-300 hover:after:translate-y-[0.2em] hover:after:scale-y-50"
+            >
+            bjarmi.dev/work
+          </a>
         </p>
       </div>
       <Image
         src="/images/programmer_illustration.png"
         alt="Programmer Illustration"
-        width={700}
-        height={722}
-        className={`mt-10 object-cover transform transition-all duration-500 ease-in-out delay-700 ${
+        width={600}
+        height={622}
+        className={`hidden md:flex mt-10 object-cover transform transition-all duration-500 ease-in-out delay-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
         />
