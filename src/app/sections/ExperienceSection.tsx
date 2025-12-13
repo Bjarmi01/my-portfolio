@@ -27,11 +27,11 @@ export default function ExperienceSection() {
    return (
      <section 
         id="section3" 
-        className="relative h-screen flex flex-col md:flex-row items-center justify-center md:justify-between px-10 md:px-40 mt-0 md:mt-[5.5vh] bg-[#4831d4] overflow-hidden"
+        className="relative h-screen flex flex-col xl:flex-row items-center justify-center xl:justify-between px-10 xl:px-40 mt-0 xl:mt-[5.5vh] bg-[#4831d4] overflow-hidden"
       >
-      <div className='w-full md:w-1/2'>
+      <div className='w-full xl:w-1/2'>
       <h1
-          className={`text-[#ccf381] md:max-w-[450px] leading-none text-4xl md:text-6xl font-bold transform transition-all duration-500 ease-in-out delay-100 ${
+          className={`text-[#ccf381] xl:max-w-[450px] leading-none text-4xl xl:text-6xl font-bold transform transition-all duration-500 ease-in-out delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -39,14 +39,14 @@ export default function ExperienceSection() {
         </h1>
 
         <h3
-          className={`text-white text-xl md:text-3xl md:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-300 ${
+          className={`text-white text-xl xl:text-3xl xl:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
           Full-Stack Skills
         </h3>
         <p
-          className={`text-white text-md md:text-xl md:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-300 ${
+          className={`text-white text-xl xl:text-xl xl:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
@@ -54,14 +54,14 @@ export default function ExperienceSection() {
         </p>
 
         <h3
-          className={`text-white text-xl md:text-3xl md:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-500 ${
+          className={`text-white text-xl xl:text-3xl xl:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
           Beanfee: Leadership & Growth
         </h3>
         <p
-          className={`text-white text-md md:text-xl md:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-500 ${
+          className={`text-white text-xl xl:text-xl xl:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
@@ -69,14 +69,14 @@ export default function ExperienceSection() {
         </p>
 
         <h3
-          className={`hidden md:flex text-white text-xl md:text-3xl md:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-700 ${
+          className={`hidden xl:flex text-white text-xl xl:text-3xl xl:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
           Stokkur: Agile Development
         </h3>
         <p
-          className={`hidden md:flex text-white text-md md:text-xl md:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-700 ${
+          className={`hidden xl:flex text-white text-xl xl:text-xl xl:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
@@ -84,21 +84,21 @@ export default function ExperienceSection() {
         </p>
 
         <h3
-          className={`text-white text-xl md:text-3xl md:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-700 ${
+          className={`text-white text-xl xl:text-3xl xl:max-w-[750px] leading-relaxed mt-4 transform transition-all duration-500 ease-in-out delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
           Academic Project: Showdeck
         </h3>
         <p
-          className={`text-white text-md md:text-xl md:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-700 ${
+          className={`text-white text-xl xl:text-xl xl:max-w-[750px] leading-relaxed transform transition-all duration-500 ease-in-out delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
           Developed a real-time chat feature as an extension of Showdeck&apos;s existing website using Vue.js, TypeScript, Django, and Tailwind CSS. I Led the frontend development, contributed to backend integration, and helped deliver a polished, collaborative solution along with my team.
         </p>
         <p
-          className={`text-white text-xs md:text-xl md:max-w-[750px] mt-4 leading-relaxed transform transition-all duration-500 ease-in-out delay-700 ${
+          className={`text-white text-xs xl:text-xl xl:max-w-[750px] mt-4 leading-relaxed transform transition-all duration-500 ease-in-out delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >  
@@ -116,7 +116,7 @@ export default function ExperienceSection() {
         alt="Programmer Illustration"
         width={600}
         height={622}
-        className={`hidden md:flex mt-10 object-cover transform transition-all duration-500 ease-in-out delay-700 ${
+        className={`hidden xl:flex 2xl:w-auto w-[500px] mt-10 object-cover transform transition-all duration-500 ease-in-out delay-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
         />

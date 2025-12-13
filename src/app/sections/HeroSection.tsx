@@ -6,7 +6,7 @@ export default function HeroSection() {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-normal md:justify-center md:px-16 h-full px-8 mt-28 md:mt-5">
         {/* Text Section */}
         <div className="w-full md:w-2/5 text-left px-4 md:p-0">
-          <h1 className="text-6xl md:text-8xl font-bold text-[#ccf381] mb-4 leading-none">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[#ccf381] mb-4 leading-none">
             Hi, I&apos;m<br />Bjarmi
           </h1>
           <p className="text-xl text-white max-w-[20em] md:max-w-fit">
@@ -17,7 +17,7 @@ export default function HeroSection() {
         {/* Image Section */}
         <div className="relative w-full md:w-3/5 flex items-center pt-32 md:py-0 justify-center">
           <div className="relative z-10">
-            <div className="w-52 h-52 md:w-96 md:h-96 border-2 border-white">
+            <div className="w-52 h-52 md:w-80 md:h-80 lg:w-96 lg:h-96  border-2 border-white">
               <Image
                 src="/images/handsome.jpeg"
                 alt="My Photo"

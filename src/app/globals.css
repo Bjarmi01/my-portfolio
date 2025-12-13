@@ -38,3 +38,20 @@ section {
     background: linear-gradient(180deg, #4831d4 60%, #ccf381 40%);
   }
 }
+
+/* Mobile-only styles for About section (below 1100px) */
+@media (max-width: 1194px) {
+  .about-mobile {
+    padding-left: 1.25rem; /* px-5 */
+    padding-right: 1.25rem;
+  }
+
+  .about-mobile .about-stack {
+    flex-direction: column !important;
+    text-align: left;
+  }
+
+  .about-mobile .about-hide {
+    display: none !important;
+  }
+}
